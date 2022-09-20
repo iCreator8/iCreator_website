@@ -1,34 +1,166 @@
+/* Main online recources here */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Additional CSS code imported here  */
+/* --------------------------------------------------------------------------------- */
+/* font-family: 'Rochester', cursive; */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #171717;
+    --tertiary-color: #2E27F7;
+    --text-color-1: #F7272F;
+    --text-color-2: #FFFFFF;
+    --text-color-3: #a1a1a6;
+    --text-color-4: #d2d2d6;
+    --optional-black: #0e0e0e;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+    // to make all elements border visible 
+    outline: .5px dashed #f00 !important;
+}
+
+
 html,
 body {
     height: 100vh;
 }
 
 body {
-    margin: 0;
+    // margin: 0;
     display: grid;
-    grid-template-columns: 30% 40% 30%;
-    grid-template-rows: 8% auto 5%;
+    grid-template-columns: fit-content(30%) fit-content(40%) fit-content(30%);
+    grid-template-rows: fit-content(10%) auto fit-content(5%);
     grid-template-areas:
         "header  header  header"
-        "main  main  main"
+        "designerSection  mainPhotoSection coderSection"
         "footer  footer  footer";
 }
 
+/* header & navigation area control */
 
 header {
+    width: 100vw;
+    display: flex;
     grid-area: header;
-    background-color: green;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: space-between;
+    height: 4em;
+
+    .mainLogo {
+        cursor: pointer;
+        font-family: 'Dancing Script', cursive;
+        color: var(--text-color-1);
+        font-size: 2rem;
+        font-weight: bold;
+        text-decoration: none;
+        margin: 0 0 1% 5%;
+
+
+        span {
+            position: absolute;
+            margin-left: 1.5em;
+            font-size: .6rem;
+            top: 4em;
+        }
+    }
+
+    nav {
+        position: relative;
+        right: 5%;
+
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+
+            li {
+                margin: 0 1rem 0 1rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--text-color-2);
+            }
+        }
+
+    }
 }
 
-main {
-    grid-area: main;
-    background-color: gray;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.designerSection {
+    grid-area: designerSection;
+    background-color: lightgray;
+    align-self: center;
+    justify-self: center;
 }
+
+
+
+.mainPhotoSection {
+    grid-area: mainPhotoSection;
+    background-color: gray;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.coderSection {
+    grid-area: coderSection;
+    background-color: lightgray;
+    align-self: center;
+    justify-self: center;
+}
+
+
 
 footer {
+    display: flex;
     grid-area: footer;
+    width: 100vw;
     background-color: blue;
+    justify-content: center;
+
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,41 +1,160 @@
+/* Main online recources here */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+/* ------------------------------------------------------------------------------------------------ */
+/* Additional CSS code imported here  */
+/* --------------------------------------------------------------------------------- */
+/* font-family: 'Rochester', cursive; */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #171717;
+  --tertiary-color: #2E27F7;
+  --text-color-1: #F7272F;
+  --text-color-2: #FFFFFF;
+  --text-color-3: #a1a1a6;
+  --text-color-4: #d2d2d6;
+  --optional-black: #0e0e0e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  outline: .5px dashed #f00 !important;
+}
+
 html,
 body {
   height: 100vh;
 }
 
 body {
-  margin: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 30% 40% 30%;
-      grid-template-columns: 30% 40% 30%;
-  -ms-grid-rows: 8% auto 5%;
-      grid-template-rows: 8% auto 5%;
-      grid-template-areas: "header  header  header" "main  main  main" "footer  footer  footer";
+  -ms-grid-columns: fit-content(30%) fit-content(40%) fit-content(30%);
+      grid-template-columns: fit-content(30%) fit-content(40%) fit-content(30%);
+  -ms-grid-rows: fit-content(10%) auto fit-content(5%);
+      grid-template-rows: fit-content(10%) auto fit-content(5%);
+      grid-template-areas: "header  header  header" "designerSection  mainPhotoSection coderSection" "footer  footer  footer";
 }
 
+/* header & navigation area control */
 header {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: header;
-  background-color: green;
+  background-color: var(--secondary-color);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 4em;
 }
 
-main {
+header .mainLogo {
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  color: var(--text-color-1);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 0 1% 5%;
+}
+
+header .mainLogo span {
+  position: absolute;
+  margin-left: 1.5em;
+  font-size: .6rem;
+  top: 4em;
+}
+
+header nav {
+  position: relative;
+  right: 5%;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 0 1rem 0 1rem;
+}
+
+header nav ul a {
+  text-decoration: none;
+  color: var(--text-color-2);
+}
+
+.designerSection {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: main;
+  grid-area: designerSection;
+  background-color: lightgray;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.mainPhotoSection {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: mainPhotoSection;
   background-color: gray;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.coderSection {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: coderSection;
+  background-color: lightgray;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: footer;
+  width: 100vw;
   background-color: blue;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media all and (max-width: 768px) {
