@@ -27,7 +27,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  outline: .5px dashed #f00 !important;
 }
 
 html,
@@ -38,11 +37,12 @@ body {
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: fit-content(30%) fit-content(40%) fit-content(30%);
-      grid-template-columns: fit-content(30%) fit-content(40%) fit-content(30%);
+  -ms-grid-columns: fit-content(50%) fit-content(60%) fit-content(50%);
+      grid-template-columns: fit-content(50%) fit-content(60%) fit-content(50%);
   -ms-grid-rows: fit-content(10%) auto fit-content(5%);
       grid-template-rows: fit-content(10%) auto fit-content(5%);
       grid-template-areas: "header  header  header" "designerSection  mainPhotoSection coderSection" "footer  footer  footer";
+  background-color: var(--primary-color);
 }
 
 /* header & navigation area control */
@@ -62,29 +62,37 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 4em;
 }
 
 header .mainLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   cursor: pointer;
   font-family: 'Dancing Script', cursive;
   color: var(--text-color-1);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   text-decoration: none;
-  margin: 0 0 1% 5%;
+  margin: 0 0 0 4%;
 }
 
 header .mainLogo span {
-  position: absolute;
-  margin-left: 1.5em;
-  font-size: .6rem;
-  top: 4em;
+  position: relative;
+  bottom: .4rem;
+  margin-left: .7rem;
+  font-size: .53rem;
+  color: var(--text-color-2);
+  letter-spacing: .1rem;
 }
 
 header nav {
   position: relative;
-  right: 5%;
+  right: 4%;
 }
 
 header nav ul {
@@ -95,15 +103,27 @@ header nav ul {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   list-style: none;
+  cursor: pointer;
 }
 
 header nav ul li {
-  margin: 0 1rem 0 1rem;
+  margin: 1.25rem 1.25rem 1.25rem 1.25rem;
 }
 
 header nav ul a {
   text-decoration: none;
   color: var(--text-color-2);
+}
+
+header nav ul a:hover {
+  color: var(--text-color-1);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+header #redBtn {
+  color: var(--text-color-1);
+  border-bottom: 0.15em solid var(--text-color-1);
 }
 
 .designerSection {
@@ -151,10 +171,22 @@ footer {
   -ms-grid-column-span: 3;
   grid-area: footer;
   width: 100vw;
-  background-color: blue;
+  background-color: var(--secondary-color);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2em;
+}
+
+footer a {
+  font-size: .5rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  color: var(--text-color-3);
+  text-decoration: none;
 }
 
 @media all and (max-width: 768px) {
