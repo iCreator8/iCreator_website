@@ -1,0 +1,263 @@
+/* Main online recources here */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Additional CSS code imported here  */
+/* --------------------------------------------------------------------------------- */
+/* font-family: 'Rochester', cursive; */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #171717;
+  --tertiary-color: #2E27F7;
+  --text-color-1: #F7272F;
+  --text-color-2: #FFFFFF;
+  --text-color-3: #a1a1a6;
+  --text-color-4: #d2d2d6;
+  --optional-black: #0e0e0e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: fit-content(10%) auto fit-content(5%);
+  grid-template-areas:
+    "header  header  header"
+    "homePage homePage homePage"
+    "footer  footer  footer";
+  background-color: var(--primary-color);
+}
+
+/* header & navigation area control start */
+header {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
+  background-color: var(--secondary-color);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+header .mainLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  color: var(--text-color-1);
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 0 0 4%;
+}
+
+header .mainLogo span {
+  position: relative;
+  bottom: .4rem;
+  margin-left: .7rem;
+  font-size: .53rem;
+  color: var(--text-color-2);
+  letter-spacing: .1rem;
+}
+
+header nav {
+  position: relative;
+  right: 4%;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  list-style: none;
+  cursor: pointer;
+}
+
+header nav ul li {
+  margin: 1.25rem 1.25rem 1.25rem 1.25rem;
+}
+
+header nav ul a {
+  text-decoration: none;
+  color: var(--text-color-2);
+}
+
+header nav ul a:hover {
+  color: var(--text-color-1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+header #redBtn {
+  color: var(--text-color-1);
+  border-bottom: 0.15em solid var(--text-color-1);
+}
+
+
+/* header & navigation area control end */
+
+
+
+.homePage {
+  grid-area: homePage;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "designerSection mainPhotoSection coderSection";
+
+
+
+  .designerSection {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: designerSection;
+    background-color: lightgray;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+
+  .mainPhotoSection {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: mainPhotoSection;
+    background-color: gray;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+
+  .coderSection {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: coderSection;
+    background-color: lightgray;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+  width: 100vw;
+  background-color: var(--secondary-color);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 2em;
+}
+
+footer a {
+  font-size: .5rem;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .1rem;
+  color: var(--text-color-3);
+  text-decoration: none;
+}
+
+// @media all and (max-width: 768px) {
+//   body {
+//     margin: 0;
+//     display: -ms-grid;
+//     display: grid;
+//     -ms-grid-columns: 100%;
+//         grid-template-columns: 100%;
+//     -ms-grid-rows: auto;
+//         grid-template-rows: auto;
+//         grid-template-areas: "footer"
+//  "main"
+//  "header";
+//   }
+//   header {
+//     -ms-grid-row: 3;
+//     -ms-grid-column: 1;
+//     grid-area: header;
+//     background-color: red;
+//   }
+//   main {
+//     -ms-grid-row: 2;
+//     -ms-grid-column: 1;
+//     grid-area: main;
+//     background-color: brown;
+//   }
+//   footer {
+//     -ms-grid-row: 1;
+//     -ms-grid-column: 1;
+//     grid-area: footer;
+//     background-color: yellow;
+//   }
+// }
