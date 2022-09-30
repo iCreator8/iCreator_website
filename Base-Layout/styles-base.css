@@ -119,11 +119,16 @@ header nav ul a:hover {
   color: var(--text-color-1);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  border-bottom: 0.15em solid var(--text-color-1);
 }
 
-header #redBtn {
+#redBtn {
   color: var(--text-color-1);
   border-bottom: 0.15em solid var(--text-color-1);
+}
+
+#mobileNavbar {
+  display: none;
 }
 
 /* header & navigation area control end */
@@ -134,8 +139,8 @@ header #redBtn {
   grid-area: homePage;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1.25fr 1fr;
+      grid-template-columns: 1fr 1.25fr 1fr;
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
       grid-template-areas: "designerSection mainPhotoSection coderSection";
@@ -202,5 +207,146 @@ footer a {
   letter-spacing: .1rem;
   color: var(--text-color-3);
   text-decoration: none;
+}
+
+@media all and (max-width: 520px) {
+  #mainNavbar {
+    display: none;
+  }
+  #mobileNavbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    position: fixed;
+  }
+  #mobileNavbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 2.5rem;
+    width: 100vw;
+  }
+  #mobileNavbar ul li {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    text-decoration: none;
+    list-style: none;
+    padding: .5rem;
+    text-align: center;
+    border: 1px solid var(--optional-black);
+    background-color: var(--secondary-color);
+    width: 100vw;
+  }
+  #mobileNavbar ul li a {
+    text-decoration: none;
+    color: var(--text-color-2);
+  }
+  #mobileNavbar ul li a:hover {
+    color: var(--text-color-1);
+    cursor: pointer;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+  }
+  #mobileNavbar #redBtn {
+    color: var(--text-color-1);
+    border: none;
+  }
+  .toggler {
+    left: 90vw;
+    --s: 1.5rem;
+    /* control the size */
+    --c: #fff;
+    /* the color */
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/1.9) solid #0000;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
+    background: var(--_g) 0, var(--_g) 100%;
+    background-size: 50% 100%;
+    position: relative;
+    -webkit-clip-path: inset(0 25%);
+            clip-path: inset(0 25%);
+    -webkit-mask: -webkit-gradient(linear, left top, right top, from(#0000), color-stop(25%, #000), to(#0000));
+    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
+    cursor: pointer;
+    -webkit-transition: background-position 0.4s var(--_s, 0.4s), -webkit-clip-path 0s var(--_s, 0.6s);
+    transition: background-position 0.4s var(--_s, 0.4s), -webkit-clip-path 0s var(--_s, 0.6s);
+    transition: background-position 0.4s var(--_s, 0.4s), clip-path 0s var(--_s, 0.6s);
+    transition: background-position 0.4s var(--_s, 0.4s), clip-path 0s var(--_s, 0.6s), -webkit-clip-path 0s var(--_s, 0.6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .toggler:before,
+  .toggler:after {
+    content: "";
+    position: absolute;
+    inset: 45% 0;
+    background: var(--c);
+    -webkit-transition: -webkit-transform 0.4s calc(.4s - var(--_s, .4s));
+    transition: -webkit-transform 0.4s calc(.4s - var(--_s, .4s));
+    transition: transform 0.4s calc(.4s - var(--_s, .4s));
+    transition: transform 0.4s calc(.4s - var(--_s, .4s)), -webkit-transform 0.4s calc(.4s - var(--_s, .4s));
+  }
+  .toggler:checked {
+    -webkit-clip-path: inset(0);
+            clip-path: inset(0);
+    background-position: -200%, 300%;
+    --_s: 0s;
+  }
+  .toggler:checked:before {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .toggler:checked:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .toggler:focus-visible {
+    -webkit-clip-path: none;
+            clip-path: none;
+    -webkit-mask: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+  }
+  #mobileMenu {
+    visibility: hidden;
+  }
+  .toggler:checked ~ #mobileMenu {
+    visibility: visible;
+    -webkit-animation: menuAnimation 1s ease;
+            animation: menuAnimation 1s ease;
+    z-index: 1;
+  }
+  @-webkit-keyframes menuAnimation {
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(100px);
+              transform: translateY(100px);
+    }
+  }
+  footer {
+    background-color: red;
+  }
 }
 /*# sourceMappingURL=styles-base.css.map */

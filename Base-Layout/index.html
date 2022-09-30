@@ -14,47 +14,64 @@
 
     <body>
 
-<!-- Header Area Control-->
+        <!-- Header Area Control-->
 
         <header>
             <a class="mainLogo" href="index.html">iCreator<br> <span>simple websites</span></a>
 
-            <nav>
-                <ul>
+            <nav id="mainNavbar">
+                <ul id="mainMenu">
                     <li><a href="index.html" id="redBtn">Home</a></li>
-                        <li><a href="#">My Work</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">About</a></li>
+                    <li><a href="#">My Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
                 </ul>
             </nav>
+
+
+            <div id="mobileNavbar">
+                <input class="toggler" type="checkbox" role="button" area-label="mobile menu opener" aria-expanded="false" aria-controls="mobileMenu">
+          
+                <ul id="mobileMenu">
+                    <li><a href="index.html" id="redBtn">Home</a></li>
+                    <li><a href="#">My Work</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+
+            </div>
         </header>
-        
 
-<!-- Home Page Section Area  -->
 
-      
-<main class="homePage">
 
-  <section class="designerSection">
-            <h1>designer here</h1>
-        </section>
+        <!-- Home Page Section Area  -->
 
-        <section class="mainPhotoSection">
-            <h1>main pic here</h1>
-        </section>
 
-        <section class="coderSection">
-            <h1>coder here</h1>
-        </section>
+        <main class="homePage">
 
-</main>
+            <section class="designerSection">
+                <h1>designer here</h1>
+            </section>
 
-<!-- Footer Area -->
+            <section class="mainPhotoSection">
+                <h1>main pic here</h1>
+            </section>
+
+            <section class="coderSection">
+                <h1>coder here</h1>
+            </section>
+
+        </main>
+
+
+
+        <!-- Footer Area starts here -->
 
         <footer>
             <a class="footerText" href="#">Copyright&copy2022 | iCreator All Rights Reserved | Terms & Conditionse</a>
         </footer>
-
+<script src="main.js"></script>
     </body>
+
 
 </html>
