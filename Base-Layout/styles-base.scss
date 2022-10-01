@@ -363,38 +363,58 @@ footer a {
   // Make Toggle to show and hide the mobile Menu 
 
 
-  // Hide the mobile Menu
-  #mobileMenu {
-    visibility: hidden;
-
-    // animation: menuAnimation 1s ease;
-    // z-index: 0;
-
-    // @-webkit-keyframes menuAnimation {
-    //   0% {
-    //     opacity: 0;
-    //     transform: translateY(-200px);
-    //   }
-    // }
-  }
-
-
   // Show mobile Menu
   .toggler:checked~#mobileMenu {
     visibility: visible;
 
-    animation: menuAnimation 1s ease;
+    animation: menuSlide 1.5s ease;
     z-index: 1;
 
-    @-webkit-keyframes menuAnimation {
+    @-webkit-keyframes menuSlide {
 
       100% {
         opacity: 1;
-        transform: translateY(100px);
+        transform: translateY(0rem);
+      }
+
+      0% {
+        opacity: 0;
+        transform: translateY(-12rem);
       }
     }
   }
 
+
+
+  // Hide the mobile Menu
+  #mobileMenu {
+    visibility: hidden;
+  }
+
+
+
+
+
+
+
+
+  // .toggler:not(:checked)~#mobileMenu {
+  //   animation: menuSlideup 1.5s ease;
+  //   z-index: 0;
+
+  //   @-webkit-keyframes menuSlideup {  
+
+  //     100% {
+  //       opacity: 1;
+  //       transform: translateY(0rem);
+  //     }
+
+  //     0% {
+  //       opacity: 0;
+  //       transform: translateY(-12rem);
+  //     }
+  //   }
+  // }
 
 
 
