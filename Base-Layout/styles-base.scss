@@ -33,6 +33,7 @@
 html,
 body {
   height: 100vh;
+  width: 100vw;
 }
 
 body {
@@ -45,7 +46,14 @@ body {
     "homePage homePage homePage"
     "footer  footer  footer";
   background-color: var(--primary-color);
+
 }
+
+body::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+
 
 /* header & navigation area control start */
 header {
@@ -64,6 +72,7 @@ header {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  position: relative;
 }
 
 header .mainLogo {
@@ -81,6 +90,7 @@ header .mainLogo {
   font-weight: bold;
   text-decoration: none;
   margin: 0 0 0 4%;
+
 }
 
 header .mainLogo span {
@@ -149,8 +159,9 @@ header nav ul a:hover {
   grid-template-rows: 1fr;
   grid-template-areas:
     "designerSection mainPhotoSection coderSection";
-
-
+  justify-items: center;
+  align-items: center;
+  white-space: nowrap;
 
   .designerSection {
     -ms-grid-row: 2;
@@ -159,9 +170,9 @@ header nav ul a:hover {
     background-color: lightgray;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
-    align-self: center;
+    // align-self: center;
     -ms-grid-column-align: center;
-    justify-self: center;
+    // justify-self: center;
   }
 
   .mainPhotoSection {
@@ -171,9 +182,9 @@ header nav ul a:hover {
     background-color: gray;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
-    align-self: center;
+    // align-self: center;
     -ms-grid-column-align: center;
-    justify-self: center;
+    // justify-self: center;
   }
 
   .coderSection {
@@ -183,9 +194,11 @@ header nav ul a:hover {
     background-color: lightgray;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
-    align-self: center;
+    // align-self: center;
     -ms-grid-column-align: center;
-    justify-self: center;
+    // justify-self: center;
+
+
   }
 
 
@@ -204,6 +217,7 @@ header nav ul a:hover {
 
 
 footer {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,23 +234,31 @@ footer {
   -ms-flex-align: center;
   align-items: center;
   height: 2em;
+
+  a {
+    font-size: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+    color: var(--text-color-3);
+    text-decoration: none;
+  }
+
+
 }
-
-footer a {
-  font-size: .5rem;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: .1rem;
-  color: var(--text-color-3);
-  text-decoration: none;
-}
-
-
 
 // Footer control ends here ------------------------------------
 
 
 
+
+
+
+
+
+
 @media all and (max-width: 520px) {
+
+
 
 
   // Hamburger Menu control area starts here -------------------------------------
@@ -248,24 +270,27 @@ footer a {
     display: none;
   }
 
-
   // Mobile menu list style controls here
   #mobileNavbar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    position: fixed;
+    width: 100vw;
+    height: 2rem;
+    position: absolute;
     // left: 90%;
 
     ul {
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 2.5rem;
+      top: 1rem;
       width: 100vw;
+      z-index: -1;
 
       li {
+        position: relative;
         align-self: center;
         text-decoration: none;
         list-style: none;
@@ -285,9 +310,10 @@ footer a {
           cursor: pointer;
           transition-duration: 0.3s;
         }
-
       }
     }
+
+
 
     #redBtn {
       color: var(--text-color-1);
@@ -301,8 +327,8 @@ footer a {
 
   // Creating a Stylish Toggle button
   .toggler {
-    left: 90vw;
-    --s: 1.5rem;
+    left: 85vw;
+    --s: 1.48rem;
     /* control the size */
     --c: #fff;
     /* the color */
@@ -316,7 +342,7 @@ footer a {
     --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
     background: var(--_g) 0, var(--_g) 100%;
     background-size: 50% 100%;
-    position: relative;
+    position: absolute;
     clip-path: inset(0 25%);
     -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
     cursor: pointer;
@@ -335,6 +361,7 @@ footer a {
     inset: 45% 0;
     background: var(--c);
     transition: transform .4s calc(.4s - var(--_s, .4s));
+
   }
 
   .toggler:checked {
@@ -363,58 +390,38 @@ footer a {
   // Make Toggle to show and hide the mobile Menu 
 
 
+  // Position the Menu list 
+
+
   // Show mobile Menu
-  .toggler:checked~#mobileMenu {
-    visibility: visible;
 
-    animation: menuSlide 1.5s ease;
-    z-index: 1;
-
-    @-webkit-keyframes menuSlide {
-
-      100% {
-        opacity: 1;
-        transform: translateY(0rem);
-      }
-
-      0% {
-        opacity: 0;
-        transform: translateY(-12rem);
-      }
-    }
+  #mobileMenu ul {
+    transform: translateY(-120%);
+    transition: all .8s ease-in-out;
   }
 
+
+  input[type=checkbox]:checked~#mobileMenu ul {
+
+    transform: translateY(17%);
+
+  }
 
 
   // Hide the mobile Menu
-  #mobileMenu {
-    visibility: hidden;
+  input[type=checkbox] #mobileMenu ul {
+    display: none;
   }
 
 
 
 
 
+  .homePage {
+    display: none;
+  }
 
 
-
-  // .toggler:not(:checked)~#mobileMenu {
-  //   animation: menuSlideup 1.5s ease;
-  //   z-index: 0;
-
-  //   @-webkit-keyframes menuSlideup {  
-
-  //     100% {
-  //       opacity: 1;
-  //       transform: translateY(0rem);
-  //     }
-
-  //     0% {
-  //       opacity: 0;
-  //       transform: translateY(-12rem);
-  //     }
-  //   }
-  // }
 
 
 
@@ -423,7 +430,13 @@ footer a {
 
 
   footer {
-    background-color: red;
+    // background-color: red;
+    white-space: nowrap;
+
+    a {
+      letter-spacing: .025rem;
+
+    }
   }
 
 

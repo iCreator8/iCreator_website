@@ -32,6 +32,7 @@
 html,
 body {
   height: 100vh;
+  width: 100vw;
 }
 
 body {
@@ -43,6 +44,11 @@ body {
       grid-template-rows: fit-content(10%) auto fit-content(5%);
       grid-template-areas: "header  header  header" "homePage homePage homePage" "footer  footer  footer";
   background-color: var(--primary-color);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
 }
 
 /* header & navigation area control start */
@@ -62,6 +68,7 @@ header {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  position: relative;
 }
 
 header .mainLogo {
@@ -144,6 +151,11 @@ header nav ul a:hover {
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
       grid-template-areas: "designerSection mainPhotoSection coderSection";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
 }
 
 .homePage .designerSection {
@@ -152,10 +164,6 @@ header nav ul a:hover {
   grid-area: designerSection;
   background-color: lightgray;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 .homePage .mainPhotoSection {
@@ -164,10 +172,6 @@ header nav ul a:hover {
   grid-area: mainPhotoSection;
   background-color: gray;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 .homePage .coderSection {
@@ -176,13 +180,10 @@ header nav ul a:hover {
   grid-area: coderSection;
   background-color: lightgray;
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
 }
 
 footer {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,7 +227,9 @@ footer a {
             justify-content: center;
     -ms-flex-line-pack: center;
         align-content: center;
-    position: fixed;
+    width: 100vw;
+    height: 2rem;
+    position: absolute;
   }
   #mobileNavbar ul {
     display: -webkit-box;
@@ -237,10 +240,12 @@ footer a {
         -ms-flex-direction: column;
             flex-direction: column;
     position: absolute;
-    top: 2.5rem;
+    top: 1rem;
     width: 100vw;
+    z-index: -1;
   }
   #mobileNavbar ul li {
+    position: relative;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -267,8 +272,8 @@ footer a {
     border: none;
   }
   .toggler {
-    left: 90vw;
-    --s: 1.5rem;
+    left: 85vw;
+    --s: 1.48rem;
     /* control the size */
     --c: #fff;
     /* the color */
@@ -282,7 +287,7 @@ footer a {
     --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
     background: var(--_g) 0, var(--_g) 100%;
     background-size: 50% 100%;
-    position: relative;
+    position: absolute;
     -webkit-clip-path: inset(0 25%);
             clip-path: inset(0 25%);
     -webkit-mask: -webkit-gradient(linear, left top, right top, from(#0000), color-stop(25%, #000), to(#0000));
@@ -329,29 +334,27 @@ footer a {
     outline: 2px solid var(--c);
     outline-offset: 5px;
   }
-  .toggler:checked ~ #mobileMenu {
-    visibility: visible;
-    -webkit-animation: menuSlide 1.5s ease;
-            animation: menuSlide 1.5s ease;
-    z-index: 1;
+  #mobileMenu ul {
+    -webkit-transform: translateY(-120%);
+            transform: translateY(-120%);
+    -webkit-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
   }
-  @-webkit-keyframes menuSlide {
-    100% {
-      opacity: 1;
-      -webkit-transform: translateY(0rem);
-              transform: translateY(0rem);
-    }
-    0% {
-      opacity: 0;
-      -webkit-transform: translateY(-12rem);
-              transform: translateY(-12rem);
-    }
+  input[type=checkbox]:checked ~ #mobileMenu ul {
+    -webkit-transform: translateY(17%);
+            transform: translateY(17%);
   }
-  #mobileMenu {
-    visibility: hidden;
+  input[type=checkbox] #mobileMenu ul {
+    display: none;
+  }
+  .homePage {
+    display: none;
   }
   footer {
-    background-color: red;
+    white-space: nowrap;
+  }
+  footer a {
+    letter-spacing: .025rem;
   }
 }
 /*# sourceMappingURL=styles-base.css.map */
