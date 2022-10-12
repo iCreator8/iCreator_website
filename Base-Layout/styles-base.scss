@@ -28,6 +28,10 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+
+  // Use Create line to test the overlap or find any issue 
+
+  // outline: 1px solid red;
 }
 
 html,
@@ -43,10 +47,9 @@ body {
   grid-template-rows: fit-content(10%) auto fit-content(5%);
   grid-template-areas:
     "header  header  header"
-    "homePage homePage homePage"
+    "mainContent mainContent mainContent"
     "footer  footer  footer";
   background-color: var(--primary-color);
-
 }
 
 body::-webkit-scrollbar {
@@ -57,6 +60,7 @@ body::-webkit-scrollbar {
 
 /* header & navigation area control start */
 header {
+  grid-area: header;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,7 +68,6 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
-  grid-area: header;
   background-color: var(--secondary-color);
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -73,6 +76,7 @@ header {
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
+  // z-index: 1;
 }
 
 header .mainLogo {
@@ -140,7 +144,7 @@ header nav ul a:hover {
 }
 
 
-#mobileNavbar {
+.mobileNavbar {
   display: none;
 }
 
@@ -153,7 +157,7 @@ header nav ul a:hover {
 
 
 .homePage {
-  grid-area: homePage;
+  grid-area: mainContent;
   display: grid;
   grid-template-columns: 1fr 1.25fr 1fr;
   grid-template-rows: 1fr;
@@ -217,6 +221,7 @@ header nav ul a:hover {
 
 
 footer {
+  grid-area: footer;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,7 +229,6 @@ footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
-  grid-area: footer;
   width: 100vw;
   background-color: var(--secondary-color);
   -webkit-box-pack: center;
@@ -258,33 +262,42 @@ footer {
 
 @media all and (max-width: 520px) {
 
-
-
+  body {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: fit-content(10%) auto fit-content(5%);
+    grid-template-areas:
+      "header"
+      "mainContent"
+      "footer";
+  }
 
   // Hamburger Menu control area starts here -------------------------------------
 
 
   // Make Main Navbar not visible
 
-  #mainNavbar {
+  .mainNavbar {
     display: none;
   }
 
+
   // Mobile menu list style controls here
-  #mobileNavbar {
+  .mobileNavbar {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     width: 100vw;
-    height: 2rem;
+    // height: 1rem;
     position: absolute;
-    // left: 90%;
 
-    ul {
+
+   ul {
       display: flex;
       flex-direction: column;
-      position: absolute;
+      position: relative;
       top: 1rem;
       width: 100vw;
       z-index: -1;
@@ -299,10 +312,18 @@ footer {
         border: 1px solid var(--optional-black);
         background-color: var(--secondary-color);
         width: 100vw;
+        z-index: -1;
+
 
         a {
           text-decoration: none;
           color: var(--text-color-2);
+        }
+
+        a:active {
+          color: var(--text-color-1);
+          transition-duration: 0.2s;
+
         }
 
         a:hover {
@@ -311,136 +332,142 @@ footer {
           transition-duration: 0.3s;
         }
       }
-    }
 
 
-
-    #redBtn {
-      color: var(--text-color-1);
-      // border-bottom: 0.15em solid var(--text-color-1);
-      border: none;
     }
   }
 
 
 
-
-  // Creating a Stylish Toggle button
-  .toggler {
-    left: 85vw;
-    --s: 1.48rem;
-    /* control the size */
-    --c: #fff;
-    /* the color */
-
-    height: var(--s);
-    aspect-ratio: 1;
+  #redBtn {
+    color: var(--text-color-1);
+    border-bottom: 0.15em solid var(--text-color-1);
     border: none;
-    padding: 0;
-    border-inline: calc(var(--s)/1.9) solid #0000;
-    box-sizing: content-box;
-    --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
-    background: var(--_g) 0, var(--_g) 100%;
-    background-size: 50% 100%;
-    position: absolute;
-    clip-path: inset(0 25%);
-    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
-    cursor: pointer;
-    transition:
-      background-position .4s var(--_s, .4s),
-      clip-path 0s var(--_s, .6s);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
   }
-
-  .toggler:before,
-  .toggler:after {
-    content: "";
-    position: absolute;
-    inset: 45% 0;
-    background: var(--c);
-    transition: transform .4s calc(.4s - var(--_s, .4s));
-
-  }
-
-  .toggler:checked {
-    clip-path: inset(0);
-    background-position: -200%, 300%;
-    --_s: 0s;
-  }
-
-  .toggler:checked:before {
-    transform: rotate(45deg);
-  }
-
-  .toggler:checked:after {
-    transform: rotate(-45deg);
-  }
-
-  .toggler:focus-visible {
-    clip-path: none;
-    -webkit-mask: none;
-    border: none;
-    outline: 2px solid var(--c);
-    outline-offset: 5px;
-  }
-
-
-  // Make Toggle to show and hide the mobile Menu 
-
-
-  // Position the Menu list 
-
-
-  // Show mobile Menu
-
-  #mobileMenu ul {
-    transform: translateY(-120%);
-    transition: all .8s ease-in-out;
-  }
-
-
-  input[type=checkbox]:checked~#mobileMenu ul {
-
-    transform: translateY(17%);
-
-  }
-
-
-  // Hide the mobile Menu
-  input[type=checkbox] #mobileMenu ul {
-    display: none;
-  }
+}
 
 
 
 
+// Creating a Stylish Toggle button
+.toggler {
+  position: absolute;
+  left: 86vw;
+  --s: 1.48rem;
+  /* control the size */
+  --c: #fff;
+  /* the color */
 
-  .homePage {
-    display: none;
-  }
+  height: var(--s);
+  aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  border-inline: calc(var(--s)/1.9) solid #0000;
+  box-sizing: content-box;
+  --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
+  background: var(--_g) 0, var(--_g) 100%;
+  background-size: 50% 100%;
+  clip-path: inset(0 25%);
+  -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
+  cursor: pointer;
+  transition:
+    background-position .4s var(--_s, .4s),
+    clip-path 0s var(--_s, .6s);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  z-index: 1;
+}
 
-
-
-
-
-
-
-
-
-  footer {
-    // background-color: red;
-    white-space: nowrap;
-
-    a {
-      letter-spacing: .025rem;
-
-    }
-  }
-
+.toggler:before,
+.toggler:after {
+  content: "";
+  position: absolute;
+  inset: 45% 0;
+  background: var(--c);
+  transition: transform .4s calc(.4s - var(--_s, .4s));
 
 }
+
+.toggler:checked {
+  clip-path: inset(0);
+  background-position: -200%, 300%;
+  --_s: 0s;
+}
+
+.toggler:checked:before {
+  transform: rotate(45deg);
+}
+
+.toggler:checked:after {
+  transform: rotate(-45deg);
+}
+
+.toggler:focus-visible {
+  clip-path: none;
+  -webkit-mask: none;
+  border: none;
+  outline: 2px solid var(--c);
+  outline-offset: 5px;
+}
+
+
+// Make Toggle to show and hide the mobile Menu 
+
+
+// Position the Menu list 
+
+
+// Show mobile Menu
+
+#mobileMenu ul {
+  transform: translateY(-45%);
+  transition: all .8s ease-in-out;
+}
+
+
+input[type=checkbox]:checked~#mobileMenu ul {
+
+  transform: translateY(57%);
+
+}
+
+
+// Hide the mobile Menu
+input[type=checkbox] #mobileMenu ul {
+  display: none;
+}
+
+
+
+
+
+.homePage {
+  grid-area: mainContent;
+  background-color: green;
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+footer {
+  grid-area: footer;
+  position: relative;
+  white-space: nowrap;
+
+  a {
+    letter-spacing: .025rem;
+
+  }
+}
+
+
 
 // @media all and (max-width: 768px) {
 //   body {
