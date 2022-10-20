@@ -1,0 +1,229 @@
+/* Main online recources here */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Additional CSS code imported here  */
+/* --------------------------------------------------------------------------------- */
+/* font-family: 'Rochester', cursive; */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #171717;
+    --tertiary-color: #2E27F7;
+    --text-color-1: #F7272F;
+    --text-color-2: #FFFFFF;
+    --text-color-3: #a1a1a6;
+    --text-color-4: #d2d2d6;
+    --optional-black: #0e0e0e;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+    // to make all elements border visible 
+    // outline: .5px dashed #f00 !important;
+}
+
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: fit-content(10%) auto fit-content(5%);
+    grid-template-areas:
+        "header  header  header"
+        "designerSection  mainPhotoSection coderSection"
+        "footer  footer  footer";
+    background-color: var(--primary-color);
+}
+
+/* header & navigation area control */
+
+header {
+    width: 100vw;
+    display: flex;
+    grid-area: header;
+    background-color: var(--secondary-color);
+    align-items: center;
+    justify-content: space-between;
+    // height: 4em;
+
+    .mainLogo {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        font-family: 'Dancing Script', cursive;
+        color: var(--text-color-1);
+        font-size: 2.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        margin: 0 0 0 4%;
+
+
+        span {
+            position: relative;
+            bottom: .4rem;
+            margin-left: .7rem;
+            font-size: .53rem;
+            // top: 4.8em;
+            color: var(--text-color-2);
+            letter-spacing: .1rem;
+        }
+    }
+
+
+    // Navigation Menu area--------------------------------------- 
+
+    nav {
+        position: relative;
+        right: 4%;
+
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            list-style: none;
+            cursor: pointer;
+
+            li {
+                margin: 1.25rem 1.25rem 1.25rem 1.25rem;
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--text-color-2);
+            }
+
+            a:hover {
+                color: var(--text-color-1);
+                transition-duration: 0.3s;
+            }
+        }
+
+    }
+
+    #redBtn {
+        color: var(--text-color-1);
+        border-bottom: 0.15em solid var(--text-color-1);
+        // transition-duration: 300ms;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.designerSection {
+    grid-area: designerSection;
+    background-color: lightgray;
+    align-self: center;
+    justify-self: center;
+
+}
+
+
+
+.mainPhotoSection {
+    grid-area: mainPhotoSection;
+    background-color: gray;
+    align-self: center;
+    justify-self: center;
+}
+
+
+.coderSection {
+    grid-area: coderSection;
+    background-color: lightgray;
+    align-self: center;
+    justify-self: center;
+}
+
+
+// Footer Area controls ----------------------------------------------
+
+
+footer {
+    display: flex;
+    grid-area: footer;
+    width: 100vw;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+
+    a {
+        font-size: .5rem;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: .1rem;
+        color: var(--text-color-3);
+        text-decoration: none;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 768px) {
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "footer"
+            "main"
+            "header";
+    }
+
+    header {
+        grid-area: header;
+        background-color: red;
+    }
+
+    main {
+        grid-area: main;
+        background-color: brown;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: yellow;
+    }
+
+}

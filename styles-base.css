@@ -269,41 +269,4 @@ footer a {
   footer a {
     letter-spacing: 0.025rem;
   }
-}
-.mainContent {
-  grid-area: mainContent;
-  display: grid;
-  grid-template-columns: 1fr 1.25fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "designerSection mainPhotoSection coderSection";
-  justify-items: center;
-  align-items: center;
-  white-space: nowrap;
-}
-.mainContent .designerSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: designerSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}
-.mainContent .mainPhotoSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: mainPhotoSection;
-  background-color: gray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}
-.mainContent .coderSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: coderSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}/*# sourceMappingURL=styles-home.css.map */
+}/*# sourceMappingURL=styles-base.css.map */

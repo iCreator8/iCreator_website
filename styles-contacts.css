@@ -279,31 +279,11 @@ footer a {
   justify-items: center;
   align-items: center;
   white-space: nowrap;
+  background-color: blue;
 }
-.mainContent .designerSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: designerSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}
-.mainContent .mainPhotoSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+.mainContent .contacts {
   grid-area: mainPhotoSection;
-  background-color: gray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
 }
-.mainContent .coderSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: coderSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}/*# sourceMappingURL=styles-home.css.map */
+.mainContent .contacts h1 {
+  color: red;
+}/*# sourceMappingURL=styles-contacts.css.map */

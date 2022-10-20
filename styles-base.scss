@@ -8,6 +8,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+
 /* ------------------------------------------------------------------------------------------------ */
 /* Additional CSS code imported here  */
 /* --------------------------------------------------------------------------------- */
@@ -26,14 +27,21 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+
+  // Use Create line to test the overlap or find any issue 
+
+  // outline: 1px dashed red;
 }
+
+
 
 html,
 body {
   height: 100vh;
   width: 100vw;
 }
+
 
 mainContainer {
   height: 100vh;
@@ -42,7 +50,10 @@ mainContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: fit-content(10%) auto fit-content(5%);
-  grid-template-areas: "header  header  header" "mainContent mainContent mainContent" "footer  footer  footer";
+  grid-template-areas:
+    "header  header  header"
+    "mainContent mainContent mainContent"
+    "footer  footer  footer";
   background-color: var(--primary-color);
   z-index: 0;
 }
@@ -51,26 +62,39 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+
 /* header & navigation area control start */
 header {
   grid-area: header;
   width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   background-color: var(--secondary-color);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
   z-index: 1;
+
 }
 
 header .mainLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
   color: var(--text-color-1);
   font-size: 2.2rem;
   font-weight: bold;
@@ -79,13 +103,14 @@ header .mainLogo {
   position: relative;
 }
 
+
 header .mainLogo span {
   position: relative;
-  bottom: 0.4rem;
-  margin-left: 0.7rem;
-  font-size: 0.53rem;
+  bottom: .4rem;
+  margin-left: .7rem;
+  font-size: .53rem;
   color: var(--text-color-2);
-  letter-spacing: 0.1rem;
+  letter-spacing: .1rem;
 }
 
 header nav {
@@ -94,7 +119,11 @@ header nav {
 }
 
 header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   list-style: none;
   cursor: pointer;
@@ -111,6 +140,7 @@ header nav ul a {
 
 header nav ul a:hover {
   color: var(--text-color-1);
+  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   border-bottom: 0.15em solid var(--text-color-1);
 }
@@ -120,85 +150,161 @@ header nav ul a:hover {
   border-bottom: 0.15em solid var(--text-color-1);
 }
 
+
 .mobileNavbar {
   display: none;
 }
 
 /* header & navigation area control end */
+
+
+
+
+
+// MAIN CONTENT CONTROLS STARTS HERE -------------------------------
+
+
+
+
+
+// MAIN CONTENT CONTROLS ENDS HERE -------------------------------
+
+
+
+
+
+// Footer control starts here ------------------------------------
+
+
 footer {
   grid-area: footer;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
   background-color: var(--secondary-color);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 2em;
-}
-footer a {
-  font-size: 0.5rem;
-  font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.1rem;
-  color: var(--text-color-3);
-  text-decoration: none;
+
+  a {
+    font-size: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+    color: var(--text-color-3);
+    text-decoration: none;
+  }
 }
 
+// Footer control ends here ------------------------------------
+
+
+
+
+
+
+// MOBILE LAYOUT STARTS HERE ---------------------------------------
+
+
 @media all and (max-width: 770px) {
+
   body {
     display: -ms-grid;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: fit-content(10%) auto fit-content(5%);
-    grid-template-areas: "header" "mainContent" "footer";
+    grid-template-areas:
+      "header"
+      "mainContent"
+      "footer";
     position: fixed;
   }
+
+  // Hamburger Menu control area starts here -------------------------------------
+
+
+  // Make Main Navbar not visible
   .mainNavbar {
     display: none;
   }
+
+
+
+  // Mobile menu list style controls starts
   .mobileNavbar {
     display: flex;
     height: 0;
     width: 100vw;
     position: absolute;
+
+    ul {
+      border-top: 2px solid var(--text-color-1);
+
+    }
+
+
+    ul li {
+      display: flex;
+      width: 100vw;
+      padding: .5rem;
+      border: 1.5px solid var(--optional-black);
+      position: relative;
+      justify-content: center;
+      // align-content: center;
+      background-color: var(--secondary-color);
+
+      a {
+        text-decoration: none;
+        color: var(--text-color-2);
+
+        &:active {
+          color: var(--text-color-1);
+          transition-duration: 0.3s;
+        }
+
+        &:hover {
+          color: var(--text-color-1);
+          cursor: pointer;
+          transition-duration: 0.3s;
+        }
+      }
+    }
   }
-  .mobileNavbar ul {
-    border-top: 2px solid var(--text-color-1);
-  }
-  .mobileNavbar ul li {
-    display: flex;
-    width: 100vw;
-    padding: 0.5rem;
-    border: 1.5px solid var(--optional-black);
-    position: relative;
-    justify-content: center;
-    background-color: var(--secondary-color);
-  }
-  .mobileNavbar ul li a {
-    text-decoration: none;
-    color: var(--text-color-2);
-  }
-  .mobileNavbar ul li a:active {
-    color: var(--text-color-1);
-    transition-duration: 0.3s;
-  }
-  .mobileNavbar ul li a:hover {
-    color: var(--text-color-1);
-    cursor: pointer;
-    transition-duration: 0.3s;
-  }
+
+
+
   #redBtn {
     border: none;
   }
+
+
+
+  // Make Toggle to show and hide the mobile Menu 
+
+
+  // Hide the mobile Menu
   #mobileMenu ul {
     transform: translateY(-70%);
-    transition: all 0.8s ease-in-out;
+    transition: all .8s ease-in-out;
   }
-  input[type=checkbox]:checked ~ #mobileMenu ul {
+
+  // Show mobile Menu
+  input[type=checkbox]:checked~#mobileMenu ul {
     transform: translateY(31.5%);
   }
+
+
+
+
+  // Creating a Stylish Toggle button starts
   .toggler {
     position: absolute;
     top: 1rem;
@@ -207,103 +313,129 @@ footer a {
     /* control the size */
     --c: #fff;
     /* the color */
+
     height: var(--s);
     aspect-ratio: 1;
     border: none;
     padding: 0;
-    border-inline: calc(var(--s) / 1.9) solid rgba(0, 0, 0, 0);
+    border-inline: calc(var(--s)/1.9) solid #0000;
     box-sizing: content-box;
     --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
     background: var(--_g) 0, var(--_g) 100%;
     background-size: 50% 100%;
-    -webkit-clip-path: inset(0 25%);
-            clip-path: inset(0 25%);
-    -webkit-mask: linear-gradient(90deg, rgba(0, 0, 0, 0), #000 25% 75%, rgba(0, 0, 0, 0));
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
     cursor: pointer;
-    transition: background-position 0.4s var(--_s, 0.4s), -webkit-clip-path 0s var(--_s, 0.6s);
-    transition: background-position 0.4s var(--_s, 0.4s), clip-path 0s var(--_s, 0.6s);
-    transition: background-position 0.4s var(--_s, 0.4s), clip-path 0s var(--_s, 0.6s), -webkit-clip-path 0s var(--_s, 0.6s);
+    transition:
+      background-position .4s var(--_s, .4s),
+      clip-path 0s var(--_s, .6s);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     z-index: 1;
   }
+
   .toggler:before,
-.toggler:after {
+  .toggler:after {
     content: "";
     position: absolute;
     inset: 45% 0;
     background: var(--c);
-    transition: transform 0.4s calc(0.4s - var(--_s, 0.4s));
+    transition: transform .4s calc(.4s - var(--_s, .4s));
+
   }
+
   .toggler:checked {
-    -webkit-clip-path: inset(0);
-            clip-path: inset(0);
+    clip-path: inset(0);
     background-position: -200%, 300%;
     --_s: 0s;
   }
+
   .toggler:checked:before {
     transform: rotate(45deg);
   }
+
   .toggler:checked:after {
     transform: rotate(-45deg);
   }
+
   .toggler:focus-visible {
-    -webkit-clip-path: none;
-            clip-path: none;
+    clip-path: none;
     -webkit-mask: none;
     border: none;
     outline: 2px solid var(--c);
     outline-offset: 5px;
   }
+
+
   .homePage {
     grid-area: mainContent;
     background-color: green;
     display: none;
   }
+
+
+
+  // MAIN CONTENT CONTROLS STARTS HERE -----------------------------
+  // MAIN CONTENT CONTROLS ENDS HERE -------------------------------
+
+
+
+
+
+
+
+  // Mobile Footer control starts here ------------------------------------
   footer {
     grid-area: footer;
     position: relative;
     white-space: nowrap;
+
+    a {
+      letter-spacing: .025rem;
+
+    }
   }
-  footer a {
-    letter-spacing: 0.025rem;
-  }
+
+
+  // Mobile Footer control ends here ------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // NOTE: THIS CODE IS NOT PART OF THIS PROJECT -----------------------
+
+  // Creating a Simple Toggle button
+
+  // .toggler {
+  //   width: 40px;
+  //   aspect-ratio: 1;
+  //   background: linear-gradient(#fff 50%, #0000 0) 0 0/100% 40%;
+
+  //   -webkit-appearance:none;
+  //   -moz-appearance:none;
+  //   appearance:none;
+  //   cursor:pointer;
+  // }
+
+  // .toggler:checked {
+  //    width: 40px;
+  //   aspect-ratio: 1;
+  //   background:  conic-gradient(from 90deg at 33% 33%, #0000 90deg, #fff 0) 
+  //     100% 100%/60% 60%;
+  //   transform: translateZ(0px) rotate(45deg);
+
+
 }
-.mainContent {
-  grid-area: mainContent;
-  display: grid;
-  grid-template-columns: 1fr 1.25fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "designerSection mainPhotoSection coderSection";
-  justify-items: center;
-  align-items: center;
-  white-space: nowrap;
-}
-.mainContent .designerSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: designerSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}
-.mainContent .mainPhotoSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: mainPhotoSection;
-  background-color: gray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}
-.mainContent .coderSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-  grid-area: coderSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
-}/*# sourceMappingURL=styles-home.css.map */
