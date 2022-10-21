@@ -1,0 +1,441 @@
+/* Main online recources here */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+
+/* ------------------------------------------------------------------------------------------------ */
+/* Additional CSS code imported here  */
+/* --------------------------------------------------------------------------------- */
+/* font-family: 'Rochester', cursive; */
+:root {
+  --primary-color: #000000;
+  --secondary-color: #171717;
+  --tertiary-color: #2E27F7;
+  --text-color-1: #F7272F;
+  --text-color-2: #FFFFFF;
+  --text-color-3: #a1a1a6;
+  --text-color-4: #d2d2d6;
+  --optional-black: #0e0e0e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+
+  // Use Create line to test the overlap or find any issue 
+
+  // outline: 1px dashed red;
+}
+
+
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+mainContainer {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: fit-content(10%) auto fit-content(5%);
+  grid-template-areas:
+    "header  header  header"
+    "mainContent mainContent mainContent"
+    "footer  footer  footer";
+  background-color: var(--primary-color);
+  z-index: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* header & navigation area control start */
+header {
+  grid-area: header;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  background-color: var(--secondary-color);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+
+}
+
+header .mainLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  color: var(--text-color-1);
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 0 0 4%;
+  position: relative;
+}
+
+
+header .mainLogo span {
+  position: relative;
+  bottom: .4rem;
+  margin-left: .7rem;
+  font-size: .53rem;
+  color: var(--text-color-2);
+  letter-spacing: .1rem;
+}
+
+header nav {
+  position: relative;
+  right: 4%;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  list-style: none;
+  cursor: pointer;
+}
+
+header nav ul li {
+  margin: 1.25rem 1.25rem 1.25rem 1.25rem;
+}
+
+header nav ul a {
+  text-decoration: none;
+  color: var(--text-color-2);
+}
+
+header nav ul a:hover {
+  color: var(--text-color-1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  border-bottom: 0.15em solid var(--text-color-1);
+}
+
+#redBtn {
+  color: var(--text-color-1);
+  border-bottom: 0.15em solid var(--text-color-1);
+}
+
+
+.mobileNavbar {
+  display: none;
+}
+
+/* header & navigation area control end */
+
+
+
+
+
+// MAIN CONTENT CONTROLS STARTS HERE -------------------------------
+
+
+
+
+
+// MAIN CONTENT CONTROLS ENDS HERE -------------------------------
+
+
+
+
+
+// Footer control starts here ------------------------------------
+
+
+footer {
+  grid-area: footer;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  width: 100vw;
+  background-color: var(--secondary-color);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 2em;
+
+  a {
+    font-size: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1rem;
+    color: var(--text-color-3);
+    text-decoration: none;
+  }
+}
+
+// Footer control ends here ------------------------------------
+
+
+
+
+
+
+// MOBILE LAYOUT STARTS HERE ---------------------------------------
+
+
+@media all and (max-width: 770px) {
+
+  body {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: fit-content(10%) auto fit-content(5%);
+    grid-template-areas:
+      "header"
+      "mainContent"
+      "footer";
+    position: fixed;
+  }
+
+  // Hamburger Menu control area starts here -------------------------------------
+
+
+  // Make Main Navbar not visible
+  .mainNavbar {
+    display: none;
+  }
+
+
+
+  // Mobile menu list style controls starts
+  .mobileNavbar {
+    display: flex;
+    height: 0;
+    width: 100vw;
+    position: absolute;
+
+    ul {
+      border-top: 2px solid var(--text-color-1);
+
+    }
+
+
+    ul li {
+      display: flex;
+      width: 100vw;
+      padding: .5rem;
+      border: 1.5px solid var(--optional-black);
+      position: relative;
+      justify-content: center;
+      // align-content: center;
+      background-color: var(--secondary-color);
+
+      a {
+        text-decoration: none;
+        color: var(--text-color-2);
+
+        &:active {
+          color: var(--text-color-1);
+          transition-duration: 0.3s;
+        }
+
+        &:hover {
+          color: var(--text-color-1);
+          cursor: pointer;
+          transition-duration: 0.3s;
+        }
+      }
+    }
+  }
+
+
+
+  #redBtn {
+    border: none;
+  }
+
+
+
+  // Make Toggle to show and hide the mobile Menu 
+
+
+  // Hide the mobile Menu
+  #mobileMenu ul {
+    transform: translateY(-70%);
+    transition: all .8s ease-in-out;
+  }
+
+  // Show mobile Menu
+  input[type=checkbox]:checked~#mobileMenu ul {
+    transform: translateY(31.5%);
+  }
+
+
+
+
+  // Creating a Stylish Toggle button starts
+  .toggler {
+    position: absolute;
+    top: 1rem;
+    left: 86vw;
+    --s: 1.48rem;
+    /* control the size */
+    --c: #fff;
+    /* the color */
+
+    height: var(--s);
+    aspect-ratio: 1;
+    border: none;
+    padding: 0;
+    border-inline: calc(var(--s)/1.9) solid #0000;
+    box-sizing: content-box;
+    --_g: linear-gradient(var(--c) 10%, #0000 0 90%, var(--c) 0) no-repeat content-box border-box;
+    background: var(--_g) 0, var(--_g) 100%;
+    background-size: 50% 100%;
+    clip-path: inset(0 25%);
+    -webkit-mask: linear-gradient(90deg, #0000, #000 25% 75%, #0000);
+    cursor: pointer;
+    transition:
+      background-position .4s var(--_s, .4s),
+      clip-path 0s var(--_s, .6s);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 1;
+  }
+
+  .toggler:before,
+  .toggler:after {
+    content: "";
+    position: absolute;
+    inset: 45% 0;
+    background: var(--c);
+    transition: transform .4s calc(.4s - var(--_s, .4s));
+
+  }
+
+  .toggler:checked {
+    clip-path: inset(0);
+    background-position: -200%, 300%;
+    --_s: 0s;
+  }
+
+  .toggler:checked:before {
+    transform: rotate(45deg);
+  }
+
+  .toggler:checked:after {
+    transform: rotate(-45deg);
+  }
+
+  .toggler:focus-visible {
+    clip-path: none;
+    -webkit-mask: none;
+    border: none;
+    outline: 2px solid var(--c);
+    outline-offset: 5px;
+  }
+
+
+  .homePage {
+    grid-area: mainContent;
+    background-color: green;
+    display: none;
+  }
+
+
+
+  // MAIN CONTENT CONTROLS STARTS HERE -----------------------------
+  // MAIN CONTENT CONTROLS ENDS HERE -------------------------------
+
+
+
+
+
+
+
+  // Mobile Footer control starts here ------------------------------------
+  footer {
+    grid-area: footer;
+    position: relative;
+    white-space: nowrap;
+
+    a {
+      letter-spacing: .025rem;
+
+    }
+  }
+
+
+  // Mobile Footer control ends here ------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // NOTE: THIS CODE IS NOT PART OF THIS PROJECT -----------------------
+
+  // Creating a Simple Toggle button
+
+  // .toggler {
+  //   width: 40px;
+  //   aspect-ratio: 1;
+  //   background: linear-gradient(#fff 50%, #0000 0) 0 0/100% 40%;
+
+  //   -webkit-appearance:none;
+  //   -moz-appearance:none;
+  //   appearance:none;
+  //   cursor:pointer;
+  // }
+
+  // .toggler:checked {
+  //    width: 40px;
+  //   aspect-ratio: 1;
+  //   background:  conic-gradient(from 90deg at 33% 33%, #0000 90deg, #fff 0) 
+  //     100% 100%/60% 60%;
+  //   transform: translateZ(0px) rotate(45deg);
+
+
+}
