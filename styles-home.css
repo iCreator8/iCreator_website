@@ -279,6 +279,7 @@ footer a {
   justify-items: center;
   align-items: center;
   white-space: nowrap;
+  /* animation control area for mainPhotoSection */
 }
 .mainContent .designerSection {
   -ms-grid-row: 2;
@@ -290,13 +291,40 @@ footer a {
   -ms-grid-column-align: center;
 }
 .mainContent .mainPhotoSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
   grid-area: mainPhotoSection;
-  background-color: gray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
+  display: flex;
+  align-self: flex-end;
+}
+.mainContent .mainPhotoSection figure {
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+}
+.mainContent .mainPhotoSection img {
+  width: 82%;
+  height: auto;
+  -webkit-animation: myPhoto 2s ease;
+          animation: myPhoto 2s ease;
+}
+@-webkit-keyframes myPhoto {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes myPhoto {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 .mainContent .coderSection {
   -ms-grid-row: 2;
