@@ -279,16 +279,48 @@ footer a {
   justify-items: center;
   align-items: center;
   white-space: nowrap;
+  /* animation control area for designerSection */
   /* animation control area for mainPhotoSection */
+  /* animation control area for designerSection */
 }
 .mainContent .designerSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   grid-area: designerSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
+  color: var(--text-color-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  -webkit-animation: designerSection 2s ease;
+          animation: designerSection 2s ease;
+}
+.mainContent .designerSection h1 {
+  font-size: 2.2vw;
+  letter-spacing: 0.05vw;
+}
+.mainContent .designerSection p {
+  font-size: 1.5vw;
+  letter-spacing: 0.03vw;
+  line-height: 1.25;
+}
+@-webkit-keyframes designerSection {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes designerSection {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
 .mainContent .mainPhotoSection {
   grid-area: mainPhotoSection;
@@ -301,8 +333,8 @@ footer a {
   justify-content: center;
 }
 .mainContent .mainPhotoSection img {
-  width: 82%;
-  height: auto;
+  height: 80vmin;
+  width: auto;
   -webkit-animation: myPhoto 2s ease;
           animation: myPhoto 2s ease;
 }
@@ -327,11 +359,41 @@ footer a {
   }
 }
 .mainContent .coderSection {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
   grid-area: coderSection;
-  background-color: lightgray;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  -ms-grid-column-align: center;
+  color: var(--text-color-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  -webkit-animation: coderSection 2s ease;
+          animation: coderSection 2s ease;
+}
+.mainContent .coderSection h1 {
+  font-size: 2.2vw;
+  letter-spacing: 0.05vw;
+}
+.mainContent .coderSection p {
+  font-size: 1.5vw;
+  letter-spacing: 0.03vw;
+  line-height: 1.25;
+}
+@-webkit-keyframes coderSection {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes coderSection {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }/*# sourceMappingURL=styles-home.css.map */
