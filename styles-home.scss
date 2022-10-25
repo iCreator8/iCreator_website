@@ -15,14 +15,15 @@
   grid-area: mainContent;
   display: grid;
   grid-template-columns: 1fr 1.25fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr .6fr;
   grid-template-areas:
-    "designerSection mainPhotoSection coderSection";
+    "designerSection mainPhotoSection coderSection"
+    "designerSection mainPhotoSection mainCTASection";
   justify-items: center;
   align-items: center;
   white-space: nowrap;
   // background-color: green;
-// height: 100vh;
+  // height: 100vh;
 
 
   // Designer texts styles control 
@@ -114,12 +115,14 @@
 
   .coderSection {
     grid-area: coderSection;
-    color: var(--text-color-2);
     display: flex;
+    position: relative;
+    top: 5.8rem;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
+    color: var(--text-color-2);
     animation: coderSection 2s ease;
+
 
     h1 {
       font-size: 2.2vw;
@@ -148,4 +151,44 @@
       transform: translateX(0px);
     }
   }
+}
+
+
+
+/* main CTA Style control starts here */
+
+.mainCTA {
+  grid-area: mainCTASection;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 16rem;
+
+
+  button {
+    color: var(--text-color-2);
+    width: 16rem;
+    font-size: 1.2rem;
+    letter-spacing: .12rem;
+    font-weight: bold;
+    padding: .25rem;
+    border-radius: .6rem;
+    // background: transparent;
+    background: var(--secondary-color);
+    border: .15rem solid var(--text-color-1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  a {
+    color: red;
+  }
+
+  h5 {
+    color: red;
+
+  }
+
+  // border: 3px dashed red;
 }

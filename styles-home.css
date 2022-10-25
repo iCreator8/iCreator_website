@@ -27,6 +27,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  outline: 1px dashed red;
 }
 
 html,
@@ -274,8 +275,8 @@ footer a {
   grid-area: mainContent;
   display: grid;
   grid-template-columns: 1fr 1.25fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "designerSection mainPhotoSection coderSection";
+  grid-template-rows: 1fr 0.6fr;
+  grid-template-areas: "designerSection mainPhotoSection coderSection" "designerSection mainPhotoSection mainCTASection";
   justify-items: center;
   align-items: center;
   white-space: nowrap;
@@ -360,11 +361,12 @@ footer a {
 }
 .mainContent .coderSection {
   grid-area: coderSection;
-  color: var(--text-color-2);
   display: flex;
+  position: relative;
+  top: 5.8rem;
   flex-direction: column;
   align-items: center;
-  justify-items: center;
+  color: var(--text-color-2);
   -webkit-animation: coderSection 2s ease;
           animation: coderSection 2s ease;
 }
@@ -396,4 +398,33 @@ footer a {
     opacity: 1;
     transform: translateX(0px);
   }
+}
+
+/* main CTA Style control starts here */
+.mainCTA {
+  grid-area: mainCTASection;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 16rem;
+}
+.mainCTA button {
+  color: var(--text-color-2);
+  width: 16rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.12rem;
+  font-weight: bold;
+  padding: 0.25rem;
+  border-radius: 0.6rem;
+  background: var(--secondary-color);
+  border: 0.15rem solid var(--text-color-1);
+  overflow: hidden;
+  position: relative;
+}
+.mainCTA a {
+  color: red;
+}
+.mainCTA h5 {
+  color: red;
 }/*# sourceMappingURL=styles-home.css.map */
