@@ -8,6 +8,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rochester&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Freehand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;400;600&display=swap");
 /* ------------------------------------------------------------------------------------------------ */
 /* Additional CSS code imported here  */
 /* --------------------------------------------------------------------------------- */
@@ -27,7 +29,6 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  outline: 1px dashed red;
 }
 
 html,
@@ -282,7 +283,7 @@ footer a {
   white-space: nowrap;
   /* animation control area for designerSection */
   /* animation control area for mainPhotoSection */
-  /* animation control area for designerSection */
+  /* animation control area for coderSection */
 }
 .mainContent .designerSection {
   grid-area: designerSection;
@@ -361,9 +362,9 @@ footer a {
 }
 .mainContent .coderSection {
   grid-area: coderSection;
+  grid-row-start: 1;
+  grid-row-end: 3;
   display: flex;
-  position: relative;
-  top: 5.8rem;
   flex-direction: column;
   align-items: center;
   color: var(--text-color-2);
@@ -407,24 +408,68 @@ footer a {
   flex-direction: column;
   align-items: center;
   justify-items: center;
-  width: 16rem;
+  -webkit-animation: mainCTASection 2s ease;
+          animation: mainCTASection 2s ease;
+  /* animation control area for mainCTASection */
 }
 .mainCTA button {
   color: var(--text-color-2);
-  width: 16rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.12rem;
+  width: 20vw;
+  height: auto;
+  font-size: 1.3vw;
+  letter-spacing: 0.2vw;
   font-weight: bold;
-  padding: 0.25rem;
-  border-radius: 0.6rem;
+  padding: 0.75vw;
+  border-radius: 0.6vw;
   background: var(--secondary-color);
-  border: 0.15rem solid var(--text-color-1);
+  border: 0.15vw solid var(--text-color-1);
   overflow: hidden;
   position: relative;
 }
-.mainCTA a {
-  color: red;
+.mainCTA button:hover {
+  border: 0.15em solid var(--tertiary-color);
+  cursor: pointer;
+}
+.mainCTA button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  transition: 0.9s;
+}
+.mainCTA button:hover::before {
+  left: 100%;
+}
+.mainCTA span {
+  color: var(--text-color-1);
+  font-family: "Dancing Script", cursive;
 }
 .mainCTA h5 {
-  color: red;
+  color: var(--text-color-3);
+  font-size: 0.6vw;
+  letter-spacing: 0.2vw;
+  padding: 0.5vw;
+}
+@-webkit-keyframes mainCTASection {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes mainCTASection {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }/*# sourceMappingURL=styles-home.css.map */
