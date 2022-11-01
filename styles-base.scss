@@ -13,6 +13,8 @@
 
 /* ------------------------------------------------------------------------------------------------ */
 /* Additional CSS code imported here  */
+
+
 /* --------------------------------------------------------------------------------- */
 /* font-family: 'Rochester', cursive; */
 :root {
@@ -44,6 +46,7 @@ body {
 }
 
 
+
 mainContainer {
   height: 100vh;
   width: 100vw;
@@ -68,8 +71,8 @@ body::-webkit-scrollbar {
 header {
   grid-area: header;
   width: 100vw;
+  height: 6vw;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -83,7 +86,6 @@ header {
   justify-content: space-between;
   position: relative;
   z-index: 1;
-
 }
 
 header .mainLogo {
@@ -97,7 +99,7 @@ header .mainLogo {
   cursor: pointer;
   font-family: 'Dancing Script', cursive;
   color: var(--text-color-1);
-  font-size: 2.2rem;
+  font-size: 4vw;
   font-weight: bold;
   text-decoration: none;
   margin: 0 0 0 4%;
@@ -107,11 +109,11 @@ header .mainLogo {
 
 header .mainLogo span {
   position: relative;
-  bottom: .4rem;
-  margin-left: .7rem;
-  font-size: .53rem;
+  bottom: .75vw;
+  margin-left: 2.8vw;
+  font-size: .75vw;
   color: var(--text-color-2);
-  letter-spacing: .1rem;
+  letter-spacing: .2vw;
 }
 
 header nav {
@@ -132,6 +134,7 @@ header nav ul {
 
 header nav ul li {
   margin: 1.25rem 1.25rem 1.25rem 1.25rem;
+  font-size: 1.25vw;
 }
 
 header nav ul a {
@@ -143,12 +146,12 @@ header nav ul a:hover {
   color: var(--text-color-1);
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  border-bottom: 0.15em solid var(--text-color-1);
+  border-bottom: 0.2vw solid var(--text-color-1);
 }
 
 #redBtn {
   color: var(--text-color-1);
-  border-bottom: 0.15em solid var(--text-color-1);
+  border-bottom: 0.2vw solid var(--text-color-1);
 }
 
 
@@ -187,6 +190,7 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
+  height: 6vh;
   background-color: var(--secondary-color);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -194,12 +198,12 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 2em;
 
   a {
-    font-size: .5rem;
+    font-size: .75vw;
+    padding: .75vw;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: .1rem;
+    letter-spacing: .15vw;
     color: var(--text-color-3);
     text-decoration: none;
   }
@@ -215,7 +219,7 @@ footer {
 // MOBILE LAYOUT STARTS HERE ---------------------------------------
 
 
-@media all and (max-width: 770px) {
+@media all and (max-width: 1030px) and (orientation: portrait) {
 
   body {
     display: -ms-grid;
@@ -308,7 +312,7 @@ footer {
   // Creating a Stylish Toggle button starts
   .toggler {
     position: absolute;
-    top: 1rem;
+    top: 1.75rem;
     left: 86vw;
     --s: 1.48rem;
     /* control the size */

@@ -57,6 +57,7 @@ body::-webkit-scrollbar {
 header {
   grid-area: header;
   width: 100vw;
+  height: 6vw;
   display: flex;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -74,7 +75,7 @@ header .mainLogo {
   cursor: pointer;
   font-family: "Dancing Script", cursive;
   color: var(--text-color-1);
-  font-size: 2.2rem;
+  font-size: 4vw;
   font-weight: bold;
   text-decoration: none;
   margin: 0 0 0 4%;
@@ -83,11 +84,11 @@ header .mainLogo {
 
 header .mainLogo span {
   position: relative;
-  bottom: 0.4rem;
-  margin-left: 0.7rem;
-  font-size: 0.53rem;
+  bottom: 0.75vw;
+  margin-left: 2.8vw;
+  font-size: 0.75vw;
   color: var(--text-color-2);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2vw;
 }
 
 header nav {
@@ -104,6 +105,7 @@ header nav ul {
 
 header nav ul li {
   margin: 1.25rem 1.25rem 1.25rem 1.25rem;
+  font-size: 1.25vw;
 }
 
 header nav ul a {
@@ -114,12 +116,12 @@ header nav ul a {
 header nav ul a:hover {
   color: var(--text-color-1);
   transition-duration: 0.3s;
-  border-bottom: 0.15em solid var(--text-color-1);
+  border-bottom: 0.2vw solid var(--text-color-1);
 }
 
 #redBtn {
   color: var(--text-color-1);
-  border-bottom: 0.15em solid var(--text-color-1);
+  border-bottom: 0.2vw solid var(--text-color-1);
 }
 
 .mobileNavbar {
@@ -135,20 +137,21 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
+  height: 6vh;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: center;
-  height: 2em;
 }
 footer a {
-  font-size: 0.5rem;
+  font-size: 0.75vw;
+  padding: 0.75vw;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15vw;
   color: var(--text-color-3);
   text-decoration: none;
 }
 
-@media all and (max-width: 770px) {
+@media all and (max-width: 1030px) and (orientation: portrait) {
   body {
     display: -ms-grid;
     display: grid;
@@ -157,9 +160,11 @@ footer a {
     grid-template-areas: "header" "mainContent" "footer";
     position: fixed;
   }
+
   .mainNavbar {
     display: none;
   }
+
   .mobileNavbar {
     display: flex;
     height: 0;
@@ -191,19 +196,23 @@ footer a {
     cursor: pointer;
     transition-duration: 0.3s;
   }
+
   #redBtn {
     border: none;
   }
+
   #mobileMenu ul {
     transform: translateY(-70%);
     transition: all 0.8s ease-in-out;
   }
+
   input[type=checkbox]:checked ~ #mobileMenu ul {
     transform: translateY(31.5%);
   }
+
   .toggler {
     position: absolute;
-    top: 1rem;
+    top: 1.75rem;
     left: 86vw;
     --s: 1.48rem;
     /* control the size */
@@ -230,6 +239,7 @@ footer a {
     appearance: none;
     z-index: 1;
   }
+
   .toggler:before,
 .toggler:after {
     content: "";
@@ -238,18 +248,22 @@ footer a {
     background: var(--c);
     transition: transform 0.4s calc(0.4s - var(--_s, 0.4s));
   }
+
   .toggler:checked {
     -webkit-clip-path: inset(0);
             clip-path: inset(0);
     background-position: -200%, 300%;
     --_s: 0s;
   }
+
   .toggler:checked:before {
     transform: rotate(45deg);
   }
+
   .toggler:checked:after {
     transform: rotate(-45deg);
   }
+
   .toggler:focus-visible {
     -webkit-clip-path: none;
             clip-path: none;
@@ -258,11 +272,13 @@ footer a {
     outline: 2px solid var(--c);
     outline-offset: 5px;
   }
+
   .homePage {
     grid-area: mainContent;
     background-color: green;
     display: none;
   }
+
   footer {
     grid-area: footer;
     position: relative;

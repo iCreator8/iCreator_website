@@ -1,5 +1,5 @@
 // Including general Styles for header, footer here 
-@import "styles-base.scss";
+@use 'styles-base.scss';
 
 
 
@@ -22,7 +22,6 @@
   justify-items: center;
   align-items: center;
   white-space: nowrap;
-  // background-color: green;
 
 
   // Designer texts styles control 
@@ -35,16 +34,17 @@
     align-items: center;
     justify-items: center;
     animation: designerSection 2s ease;
+    padding-left: 2vw;
 
     h1 {
-      font-size: 2.2vw;
-      letter-spacing: .05vw;
+      font-size: 3vw;
+      letter-spacing: .2vw;
     }
 
     p {
-      font-size: 1.5vw;
+      font-size: 1.7vw;
       letter-spacing: .03vw;
-      line-height: 1.25;
+      line-height: 1.5;
     }
   }
 
@@ -81,10 +81,11 @@
     }
 
     img {
-      // width: 40vmax;
-      // height: auto;
-      height: 80vmin;
-      width: auto;
+      // width: 80%;
+      width: 65vmin;
+      height: auto;
+      // height: 80vmin;
+      // width: auto;
       animation: myPhoto 2s ease;
     }
 
@@ -121,18 +122,17 @@
     align-items: center;
     color: var(--text-color-2);
     animation: coderSection 2s ease;
+padding-right: 2vw;
 
-
-    h1 {
-      font-size: 2.2vw;
-      letter-spacing: .05vw;
+     h1 {
+      font-size: 3vw;
+      letter-spacing: .2vw;
     }
 
     p {
-      font-size: 1.5vw;
+      font-size: 1.7vw;
       letter-spacing: .03vw;
-      line-height: 1.25;
-
+      line-height: 1.5;
     }
   }
 
@@ -164,6 +164,7 @@
   align-items: center;
   justify-items: center;
   animation: mainCTASection 2s ease;
+  margin-top: 2.5vw;
 
 
   button {
@@ -174,7 +175,7 @@
     letter-spacing: .2vw;
     font-weight: bold;
     padding: .75vw;
-    border-radius: .6vw;
+    border-radius: 2vw;
     // background: transparent;
     background: var(--secondary-color);
     border: .15vw solid var(--text-color-1);
@@ -183,7 +184,7 @@
 
 
     &:hover {
-      border: 0.15em solid var(--tertiary-color);
+      border: 0.15vw solid var(--tertiary-color);
       cursor: pointer;
     }
 
@@ -217,7 +218,7 @@
 
   h5 {
     color: var(--text-color-3);
-    font-size: .6vw;
+    font-size: .75vw;
     letter-spacing: .20vw;
     padding: .5vw;
   }
