@@ -28,6 +28,17 @@
   --optional-black: #0e0e0e;
 }
 
+
+@viewport {
+  width: device-width;
+  zoom: 1.0
+}
+
+@-ms-viewport {
+  width: device-width
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -71,7 +82,7 @@ body::-webkit-scrollbar {
 header {
   grid-area: header;
   width: 100vw;
-  height: 6vw;
+  height: auto;
   display: -webkit-box;
   display: flex;
   -ms-grid-row: 1;
@@ -102,15 +113,15 @@ header .mainLogo {
   font-size: 4vw;
   font-weight: bold;
   text-decoration: none;
-  margin: 0 0 0 4%;
+  margin: .5% 0 0 4%;
   position: relative;
 }
 
 
 header .mainLogo span {
   position: relative;
-  bottom: .75vw;
-  margin-left: 2.8vw;
+  bottom: .70vw;
+  margin-left: 2.5vw;
   font-size: .75vw;
   color: var(--text-color-2);
   letter-spacing: .2vw;
@@ -190,7 +201,7 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
-  height: 6vh;
+  height: 5vh;
   background-color: var(--secondary-color);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -233,6 +244,24 @@ footer {
     position: fixed;
   }
 
+
+  header {
+    height: 7vh;
+
+    .mainLogo {
+      font-size: 7vw;
+
+      & span {
+        position: relative;
+        bottom: 1vw;
+        font-size: 1.5vw;
+      }
+    }
+
+  }
+
+
+
   // Hamburger Menu control area starts here -------------------------------------
 
 
@@ -250,9 +279,9 @@ footer {
     width: 100vw;
     position: absolute;
 
+
     ul {
       border-top: 2px solid var(--text-color-1);
-
     }
 
 
@@ -263,7 +292,6 @@ footer {
       border: 1.5px solid var(--optional-black);
       position: relative;
       justify-content: center;
-      // align-content: center;
       background-color: var(--secondary-color);
 
       a {
@@ -297,13 +325,13 @@ footer {
 
   // Hide the mobile Menu
   #mobileMenu ul {
-    transform: translateY(-70%);
+    transform: translateY(-25vh);
     transition: all .8s ease-in-out;
   }
 
   // Show mobile Menu
   input[type=checkbox]:checked~#mobileMenu ul {
-    transform: translateY(31.5%);
+    transform: translateY(7vh);
   }
 
 
@@ -312,9 +340,9 @@ footer {
   // Creating a Stylish Toggle button starts
   .toggler {
     position: absolute;
-    top: 1.75rem;
+    top: 2.5vh;
     left: 86vw;
-    --s: 1.48rem;
+    --s: 5vw;
     /* control the size */
     --c: #fff;
     /* the color */
@@ -395,9 +423,11 @@ footer {
     grid-area: footer;
     position: relative;
     white-space: nowrap;
+    height: 4vh;
 
     a {
-      letter-spacing: .025rem;
+      letter-spacing: .2vw;
+      font-size: 1.75vw;
 
     }
   }

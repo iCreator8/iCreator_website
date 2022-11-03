@@ -78,12 +78,16 @@
       // background-color: green;
       align-self: flex-end;
       justify-content: center;
+      width: auto;
+      height: auto;
+      // height: 35vmax;
+      // height: 80vmin;
     }
 
     img {
-      // width: 80%;
-      width: 65vmin;
-      height: auto;
+      width: 100%;
+      // width: 65vmin;
+      // height: auto;
       // height: 80vmin;
       // width: auto;
       animation: myPhoto 2s ease;
@@ -122,9 +126,9 @@
     align-items: center;
     color: var(--text-color-2);
     animation: coderSection 2s ease;
-padding-right: 2vw;
+    padding-right: 2vw;
 
-     h1 {
+    h1 {
       font-size: 3vw;
       letter-spacing: .2vw;
     }
