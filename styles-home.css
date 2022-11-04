@@ -45,8 +45,8 @@
 
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 mainContainer {
@@ -69,7 +69,7 @@ body::-webkit-scrollbar {
 header {
   grid-area: header;
   width: 100vw;
-  height: 6vw;
+  height: auto;
   display: flex;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -90,14 +90,14 @@ header .mainLogo {
   font-size: 4vw;
   font-weight: bold;
   text-decoration: none;
-  margin: 0 0 0 4%;
+  margin: 0.5% 0 0 4%;
   position: relative;
 }
 
 header .mainLogo span {
   position: relative;
-  bottom: 0.75vw;
-  margin-left: 2.8vw;
+  bottom: 0.7vw;
+  margin-left: 2.5vw;
   font-size: 0.75vw;
   color: var(--text-color-2);
   letter-spacing: 0.2vw;
@@ -116,8 +116,8 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 1.25rem 1.25rem 1.25rem 1.25rem;
-  font-size: 1.25vw;
+  margin: 1vw 1.75vw 1vw 1.75vw;
+  font-size: 1.5vw;
 }
 
 header nav ul a {
@@ -149,16 +149,16 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
-  height: 6vh;
+  height: 5vh;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: center;
 }
 footer a {
-  font-size: 0.75vw;
+  font-size: 0.6vw;
   padding: 0.75vw;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.15vw;
+  letter-spacing: 0.1vw;
   color: var(--text-color-3);
   text-decoration: none;
 }
@@ -171,6 +171,19 @@ footer a {
     grid-template-rows: fit-content(10%) auto fit-content(5%);
     grid-template-areas: "header" "mainContent" "footer";
     position: fixed;
+  }
+
+  header {
+    height: 6vh;
+  }
+  header .mainLogo {
+    font-size: 6vw;
+    color: green;
+  }
+  header .mainLogo span {
+    position: relative;
+    bottom: 1vw;
+    font-size: 1.5vw;
   }
 
   .mainNavbar {
@@ -214,19 +227,19 @@ footer a {
   }
 
   #mobileMenu ul {
-    transform: translateY(-70%);
+    transform: translateY(-25vh);
     transition: all 0.8s ease-in-out;
   }
 
   input[type=checkbox]:checked ~ #mobileMenu ul {
-    transform: translateY(31.5%);
+    transform: translateY(7vh);
   }
 
   .toggler {
     position: absolute;
-    top: 1.75rem;
-    left: 86vw;
-    --s: 1.48rem;
+    top: 2vh;
+    left: 84vw;
+    --s: 7vw;
     /* control the size */
     --c: #fff;
     /* the color */
@@ -281,8 +294,8 @@ footer a {
             clip-path: none;
     -webkit-mask: none;
     border: none;
-    outline: 2px solid var(--c);
-    outline-offset: 5px;
+    outline: 2vw solid var(--c);
+    outline-offset: 5vw;
   }
 
   .homePage {
@@ -295,9 +308,11 @@ footer a {
     grid-area: footer;
     position: relative;
     white-space: nowrap;
+    height: 4vh;
   }
   footer a {
-    letter-spacing: 0.025rem;
+    letter-spacing: 0.2vw;
+    font-size: 1.75vw;
   }
 }
 .mainContent {
@@ -329,9 +344,10 @@ footer a {
   letter-spacing: 0.2vw;
 }
 .mainContent .designerSection p {
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   letter-spacing: 0.03vw;
   line-height: 1.5;
+  text-align: center;
 }
 @-webkit-keyframes designerSection {
   0% {
@@ -363,10 +379,11 @@ footer a {
   align-self: flex-end;
   justify-content: center;
   width: auto;
-  height: auto;
+  height: 80vmin;
 }
 .mainContent .mainPhotoSection img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   -webkit-animation: myPhoto 2s ease;
           animation: myPhoto 2s ease;
 }
@@ -407,9 +424,10 @@ footer a {
   letter-spacing: 0.2vw;
 }
 .mainContent .coderSection p {
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   letter-spacing: 0.03vw;
   line-height: 1.5;
+  text-align: center;
 }
 @-webkit-keyframes coderSection {
   0% {

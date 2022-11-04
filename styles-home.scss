@@ -42,9 +42,11 @@
     }
 
     p {
-      font-size: 1.7vw;
+      font-size: 1.5vw;
       letter-spacing: .03vw;
       line-height: 1.5;
+      text-align: center;
+
     }
   }
 
@@ -75,21 +77,15 @@
 
     figure {
       display: flex;
-      // background-color: green;
       align-self: flex-end;
       justify-content: center;
       width: auto;
-      height: auto;
-      // height: 35vmax;
-      // height: 80vmin;
+      height: 80vmin;
     }
 
     img {
-      width: 100%;
-      // width: 65vmin;
-      // height: auto;
-      // height: 80vmin;
-      // width: auto;
+      max-width: 100%;
+      height: auto;
       animation: myPhoto 2s ease;
     }
 
@@ -134,9 +130,11 @@
     }
 
     p {
-      font-size: 1.7vw;
+      font-size: 1.5vw;
       letter-spacing: .03vw;
       line-height: 1.5;
+      text-align: center;
+
     }
   }
 

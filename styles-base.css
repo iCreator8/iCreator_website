@@ -45,8 +45,8 @@
 
 html,
 body {
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 mainContainer {
@@ -87,7 +87,7 @@ header .mainLogo {
   cursor: pointer;
   font-family: "Dancing Script", cursive;
   color: var(--text-color-1);
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-weight: bold;
   text-decoration: none;
   margin: 0.5% 0 0 4%;
@@ -96,9 +96,9 @@ header .mainLogo {
 
 header .mainLogo span {
   position: relative;
-  bottom: 0.7vw;
-  margin-left: 2.5vw;
-  font-size: 0.75vw;
+  bottom: 0.6vw;
+  margin-left: 2vw;
+  font-size: 0.65vw;
   color: var(--text-color-2);
   letter-spacing: 0.2vw;
 }
@@ -116,8 +116,8 @@ header nav ul {
 }
 
 header nav ul li {
-  margin: 1.25rem 1.25rem 1.25rem 1.25rem;
-  font-size: 1.25vw;
+  margin: 1vw 1.75vw 1vw 1.75vw;
+  font-size: 1.5vw;
 }
 
 header nav ul a {
@@ -155,10 +155,10 @@ footer {
   align-items: center;
 }
 footer a {
-  font-size: 0.75vw;
+  font-size: 0.6vw;
   padding: 0.75vw;
   font-family: "Montserrat", sans-serif;
-  letter-spacing: 0.15vw;
+  letter-spacing: 0.1vw;
   color: var(--text-color-3);
   text-decoration: none;
 }
@@ -177,7 +177,7 @@ footer a {
     height: 7vh;
   }
   header .mainLogo {
-    font-size: 7vw;
+    font-size: 8vw;
   }
   header .mainLogo span {
     position: relative;
@@ -236,9 +236,9 @@ footer a {
 
   .toggler {
     position: absolute;
-    top: 2.5vh;
-    left: 86vw;
-    --s: 5vw;
+    top: 2vh;
+    left: 84vw;
+    --s: 7vw;
     /* control the size */
     --c: #fff;
     /* the color */
@@ -293,8 +293,8 @@ footer a {
             clip-path: none;
     -webkit-mask: none;
     border: none;
-    outline: 2px solid var(--c);
-    outline-offset: 5px;
+    outline: 2vw solid var(--c);
+    outline-offset: 5vw;
   }
 
   .homePage {
