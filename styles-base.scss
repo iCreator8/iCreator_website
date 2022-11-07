@@ -52,8 +52,11 @@
 
 html,
 body {
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  // height: calc(var(--vh, 1vh) * 100);
+  // min-height: -webkit-fill-available;
+  width: 100vw;
 }
 
 
@@ -122,7 +125,6 @@ header .mainLogo {
 header .mainLogo span {
   position: relative;
   bottom: .60vw;
-  margin-left: 2vw;
   font-size: .65vw;
   color: var(--text-color-2);
   letter-spacing: .2vw;
@@ -202,7 +204,7 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
-  height: 5vh;
+  height: 4vh;
   background-color: var(--secondary-color);
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -210,9 +212,10 @@ footer {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  // background-color: gray;
 
   a {
-    font-size: .60vw;
+    font-size: .70vw;
     padding: .75vw;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .1vw;
@@ -243,6 +246,12 @@ footer {
       "mainContent"
       "footer";
     position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available;
   }
 
 
@@ -256,6 +265,7 @@ footer {
         position: relative;
         bottom: 1vw;
         font-size: 1.5vw;
+        left: 6vw;
       }
     }
 
@@ -343,9 +353,9 @@ footer {
   // Creating a Stylish Toggle button starts
   .toggler {
     position: absolute;
-    top: 2vh;
+    top: 2.25vh;
     left: 84vw;
-    --s: 7vw;
+    --s: 6vw;
     /* control the size */
     --c: #fff;
     /* the color */

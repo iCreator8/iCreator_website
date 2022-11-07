@@ -22,7 +22,7 @@
   justify-items: center;
   align-items: center;
   white-space: nowrap;
-
+  width: 99.8vw;
 
   // Designer texts styles control 
 
@@ -167,6 +167,8 @@
   justify-items: center;
   animation: mainCTASection 2s ease;
   margin-top: 2.5vw;
+  position: relative;
+  right: 1vw;
 
 
   button {
@@ -239,5 +241,193 @@
       -webkit-transform: translateX(0px);
       transform: translateX(0px);
     }
+  }
+}
+
+
+
+// MOBILE LAYOUT STARTS HERE ---------------------------------------------
+
+
+// For most recent mobile devices
+
+@media all and (max-width: 1030px) and (orientation: portrait) {
+
+  .mainContent {
+    grid-area: mainContent;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .75fr .15fr 0 .25fr;
+    grid-template-areas:
+      " mainPhotoSection"
+      "designerSection"
+      "coderSection"
+      "mainCTASection";
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 99vw;
+
+
+    .mainPhotoSection {
+      grid-area: mainPhotoSection;
+
+
+      figure {
+        width: 80vmin;
+        height: auto;
+      }
+    }
+
+
+    .designerSection {
+      grid-area: designerSection;
+      position: relative;
+      bottom: 5vw;
+      // display: none;
+
+
+
+      h1 {
+        font-size: 10vw;
+      }
+
+      p {
+        font-size: 5vw;
+        letter-spacing: .25vw;
+      }
+    }
+
+
+    .coderSection {
+      grid-area: coderSection;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      position: relative;
+      bottom: 5vw;
+      display: none;
+
+
+
+      h1 {
+        font-size: 10vw;
+        letter-spacing: 2.5vw;
+
+      }
+
+      p {
+        font-size: 5vw;
+        letter-spacing: .25vw;
+      }
+
+    }
+
+
+    .mainCTA {
+      grid-area: mainCTASection;
+      margin: 0;
+      justify-self: center;
+      position: relative;
+      bottom: 2vw;
+      right: 0;
+
+      button {
+        width: 70vw;
+        height: auto;
+        font-size: 5.3vw;
+        letter-spacing: .75vw;
+        padding: 1.5vw;
+        border: .5vw solid var(--text-color-1);
+
+
+
+      }
+
+      h5 {
+        font-size: 2.5vw;
+        letter-spacing: .75vw;
+        padding: .5vw;
+      }
+    }
+
+
+
+  }
+
+}
+
+
+// For smaller screen phones
+
+@media all and (max-height: 738px) and (orientation: portrait) {
+
+
+  .mainContent {
+    grid-area: mainContent;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .85fr .15fr 0 .25fr;
+    grid-template-areas:
+      " mainPhotoSection"
+      "designerSection"
+      "coderSection"
+      "mainCTASection";
+
+
+    .mainPhotoSection {
+
+      figure {
+        width: 70vmin;
+        height: auto;
+      }
+    }
+
+
+    .designerSection {
+
+
+      h1 {
+        font-size: 9vw;
+      }
+
+      p {
+        font-size: 4vw;
+        letter-spacing: .25vw;
+      }
+    }
+
+
+    .coderSection {
+
+      h1 {
+        font-size: 9vw;
+        letter-spacing: 2.5vw;
+
+      }
+
+      p {
+        font-size: 4vw;
+        letter-spacing: .25vw;
+      }
+
+    }
+
+
+    .mainCTA {
+      bottom: 3vw;
+
+      button {
+        width: 60vw;
+        font-size: 4vw;
+
+
+
+      }
+
+      h5 {
+        font-size: 2vw;
+      }
+    }
+
   }
 }

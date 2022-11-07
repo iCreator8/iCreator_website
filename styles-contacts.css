@@ -45,8 +45,9 @@
 
 html,
 body {
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  width: 100vw;
 }
 
 mainContainer {
@@ -87,7 +88,7 @@ header .mainLogo {
   cursor: pointer;
   font-family: "Dancing Script", cursive;
   color: var(--text-color-1);
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-weight: bold;
   text-decoration: none;
   margin: 0.5% 0 0 4%;
@@ -96,9 +97,9 @@ header .mainLogo {
 
 header .mainLogo span {
   position: relative;
-  bottom: 0.7vw;
-  margin-left: 2.5vw;
-  font-size: 0.75vw;
+  bottom: 0.6vw;
+  margin-left: 2vw;
+  font-size: 0.65vw;
   color: var(--text-color-2);
   letter-spacing: 0.2vw;
 }
@@ -117,7 +118,7 @@ header nav ul {
 
 header nav ul li {
   margin: 1vw 1.75vw 1vw 1.75vw;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
 }
 
 header nav ul a {
@@ -149,13 +150,13 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
-  height: 5vh;
+  height: 4vh;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: center;
 }
 footer a {
-  font-size: 0.6vw;
+  font-size: 0.7vw;
   padding: 0.75vw;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.1vw;
@@ -171,6 +172,10 @@ footer a {
     grid-template-rows: fit-content(10%) auto fit-content(5%);
     grid-template-areas: "header" "mainContent" "footer";
     position: fixed;
+    height: 100vh;
+    /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available;
   }
 
   header {

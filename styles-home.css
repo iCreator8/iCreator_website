@@ -45,8 +45,9 @@
 
 html,
 body {
-  height: 100dvh;
-  width: 100dvw;
+  height: 100vh;
+  /* Fallback for browsers that do not support Custom Properties */
+  width: 100vw;
 }
 
 mainContainer {
@@ -87,7 +88,7 @@ header .mainLogo {
   cursor: pointer;
   font-family: "Dancing Script", cursive;
   color: var(--text-color-1);
-  font-size: 4vw;
+  font-size: 3.5vw;
   font-weight: bold;
   text-decoration: none;
   margin: 0.5% 0 0 4%;
@@ -96,9 +97,8 @@ header .mainLogo {
 
 header .mainLogo span {
   position: relative;
-  bottom: 0.7vw;
-  margin-left: 2.5vw;
-  font-size: 0.75vw;
+  bottom: 0.6vw;
+  font-size: 0.65vw;
   color: var(--text-color-2);
   letter-spacing: 0.2vw;
 }
@@ -149,13 +149,13 @@ footer {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   width: 100vw;
-  height: 5vh;
+  height: 4vh;
   background-color: var(--secondary-color);
   justify-content: center;
   align-items: center;
 }
 footer a {
-  font-size: 0.6vw;
+  font-size: 0.7vw;
   padding: 0.75vw;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0.1vw;
@@ -171,19 +171,24 @@ footer a {
     grid-template-rows: fit-content(10%) auto fit-content(5%);
     grid-template-areas: "header" "mainContent" "footer";
     position: fixed;
+    width: 100vw;
+    height: 100vh;
+    /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: -webkit-fill-available;
   }
 
   header {
-    height: 6vh;
+    height: 7vh;
   }
   header .mainLogo {
-    font-size: 6vw;
-    color: green;
+    font-size: 8vw;
   }
   header .mainLogo span {
     position: relative;
     bottom: 1vw;
     font-size: 1.5vw;
+    left: 6vw;
   }
 
   .mainNavbar {
@@ -237,9 +242,9 @@ footer a {
 
   .toggler {
     position: absolute;
-    top: 2vh;
+    top: 2.25vh;
     left: 84vw;
-    --s: 7vw;
+    --s: 6vw;
     /* control the size */
     --c: #fff;
     /* the color */
@@ -324,6 +329,7 @@ footer a {
   justify-items: center;
   align-items: center;
   white-space: nowrap;
+  width: 99.8vw;
   /* animation control area for designerSection */
   /* animation control area for mainPhotoSection */
   /* animation control area for coderSection */
@@ -460,6 +466,8 @@ footer a {
   -webkit-animation: mainCTASection 2s ease;
           animation: mainCTASection 2s ease;
   margin-top: 2.5vw;
+  position: relative;
+  right: 1vw;
   /* animation control area for mainCTASection */
 }
 .mainCTA button {
@@ -521,5 +529,113 @@ footer a {
   100% {
     opacity: 1;
     transform: translateX(0px);
+  }
+}
+
+@media all and (max-width: 1030px) and (orientation: portrait) {
+  .mainContent {
+    grid-area: mainContent;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.75fr 0.15fr 0 0.25fr;
+    grid-template-areas: " mainPhotoSection" "designerSection" "coderSection" "mainCTASection";
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    width: 99vw;
+  }
+  .mainContent .mainPhotoSection {
+    grid-area: mainPhotoSection;
+  }
+  .mainContent .mainPhotoSection figure {
+    width: 80vmin;
+    height: auto;
+  }
+  .mainContent .designerSection {
+    grid-area: designerSection;
+    position: relative;
+    bottom: 5vw;
+  }
+  .mainContent .designerSection h1 {
+    font-size: 10vw;
+  }
+  .mainContent .designerSection p {
+    font-size: 5vw;
+    letter-spacing: 0.25vw;
+  }
+  .mainContent .coderSection {
+    grid-area: coderSection;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    position: relative;
+    bottom: 5vw;
+    display: none;
+  }
+  .mainContent .coderSection h1 {
+    font-size: 10vw;
+    letter-spacing: 2.5vw;
+  }
+  .mainContent .coderSection p {
+    font-size: 5vw;
+    letter-spacing: 0.25vw;
+  }
+  .mainContent .mainCTA {
+    grid-area: mainCTASection;
+    margin: 0;
+    justify-self: center;
+    position: relative;
+    bottom: 2vw;
+    right: 0;
+  }
+  .mainContent .mainCTA button {
+    width: 70vw;
+    height: auto;
+    font-size: 5.3vw;
+    letter-spacing: 0.75vw;
+    padding: 1.5vw;
+    border: 0.5vw solid var(--text-color-1);
+  }
+  .mainContent .mainCTA h5 {
+    font-size: 2.5vw;
+    letter-spacing: 0.75vw;
+    padding: 0.5vw;
+  }
+}
+@media all and (max-height: 738px) and (orientation: portrait) {
+  .mainContent {
+    grid-area: mainContent;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.85fr 0.15fr 0 0.25fr;
+    grid-template-areas: " mainPhotoSection" "designerSection" "coderSection" "mainCTASection";
+  }
+  .mainContent .mainPhotoSection figure {
+    width: 70vmin;
+    height: auto;
+  }
+  .mainContent .designerSection h1 {
+    font-size: 9vw;
+  }
+  .mainContent .designerSection p {
+    font-size: 4vw;
+    letter-spacing: 0.25vw;
+  }
+  .mainContent .coderSection h1 {
+    font-size: 9vw;
+    letter-spacing: 2.5vw;
+  }
+  .mainContent .coderSection p {
+    font-size: 4vw;
+    letter-spacing: 0.25vw;
+  }
+  .mainContent .mainCTA {
+    bottom: 3vw;
+  }
+  .mainContent .mainCTA button {
+    width: 60vw;
+    font-size: 4vw;
+  }
+  .mainContent .mainCTA h5 {
+    font-size: 2vw;
   }
 }/*# sourceMappingURL=styles-home.css.map */
