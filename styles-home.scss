@@ -79,7 +79,7 @@
       display: flex;
       align-self: flex-end;
       justify-content: center;
-      width: auto;
+      width: 100%;
       height: 80vmin;
     }
 
@@ -179,7 +179,7 @@
     letter-spacing: .2vw;
     font-weight: bold;
     padding: .75vw;
-    border-radius: 2vw;
+    border-radius: 1vw;
     // background: transparent;
     background: var(--secondary-color);
     border: .15vw solid var(--text-color-1);
@@ -257,7 +257,7 @@
     grid-area: mainContent;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .75fr .15fr 0 .25fr;
+    grid-template-rows: .65fr .1fr 0 .35fr;
     grid-template-areas:
       " mainPhotoSection"
       "designerSection"
@@ -266,7 +266,6 @@
     justify-items: center;
     align-items: center;
     align-content: center;
-    width: 99vw;
 
 
     .mainPhotoSection {
@@ -274,8 +273,8 @@
 
 
       figure {
-        width: 80vmin;
-        height: auto;
+        width: 75vmin;
+        height: 100%;
       }
     }
 
@@ -328,8 +327,8 @@
       margin: 0;
       justify-self: center;
       position: relative;
-      bottom: 2vw;
       right: 0;
+      bottom: 12vw;
 
       button {
         width: 70vw;
@@ -338,7 +337,9 @@
         letter-spacing: .75vw;
         padding: 1.5vw;
         border: .5vw solid var(--text-color-1);
+        margin-top: 10vw;
 
+        border-radius: 2vw;
 
 
       }
@@ -359,14 +360,14 @@
 
 // For smaller screen phones
 
-@media all and (max-height: 738px) and (orientation: portrait) {
+@media all and (max-height: 740px) and (orientation: portrait) {
 
 
   .mainContent {
     grid-area: mainContent;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .85fr .15fr 0 .25fr;
+    grid-template-rows: .75fr .15fr 0 .35fr;
     grid-template-areas:
       " mainPhotoSection"
       "designerSection"
@@ -377,8 +378,8 @@
     .mainPhotoSection {
 
       figure {
-        width: 70vmin;
-        height: auto;
+        width: 65vmin;
+        height: 100%;
       }
     }
 
@@ -414,12 +415,13 @@
 
 
     .mainCTA {
-      bottom: 3vw;
+      bottom: 12vw;
 
       button {
         width: 60vw;
         font-size: 4vw;
-
+        margin-top: 10vw;
+        border-radius: 2vw;
 
 
       }

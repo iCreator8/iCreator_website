@@ -45,9 +45,9 @@
 
 html,
 body {
-  height: 100vh;
   /* Fallback for browsers that do not support Custom Properties */
   width: 100vw;
+  height: 100vh;
 }
 
 mainContainer {
@@ -98,7 +98,6 @@ header .mainLogo {
 header .mainLogo span {
   position: relative;
   bottom: 0.6vw;
-  margin-left: 2vw;
   font-size: 0.65vw;
   color: var(--text-color-2);
   letter-spacing: 0.2vw;
@@ -172,10 +171,13 @@ footer a {
     grid-template-rows: fit-content(10%) auto fit-content(5%);
     grid-template-areas: "header" "mainContent" "footer";
     position: fixed;
-    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
     /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    min-height: -webkit-fill-available;
+  }
+
+  mainContainer {
+    height: calc(100vh - env(safe-area-inset-bottom));
   }
 
   header {
@@ -188,6 +190,7 @@ footer a {
     position: relative;
     bottom: 1vw;
     font-size: 1.5vw;
+    left: 8vw;
   }
 
   .mainNavbar {
@@ -241,14 +244,14 @@ footer a {
 
   .toggler {
     position: absolute;
-    top: 2vh;
-    left: 84vw;
-    --s: 7vw;
+    top: 2.5vh;
+    left: 80vw;
     /* control the size */
-    --c: #fff;
+    --s: 5vw;
     /* the color */
+    --c: #fff;
     height: var(--s);
-    aspect-ratio: 1;
+    aspect-ratio: 2/1;
     border: none;
     padding: 0;
     border-inline: calc(var(--s) / 1.9) solid rgba(0, 0, 0, 0);

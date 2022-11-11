@@ -29,14 +29,14 @@
 }
 
 
-@viewport {
-  width: device-width;
-  zoom: 1.0
-}
+// @viewport {
+//   width: device-width;
+//   zoom: 1.0
+// }
 
-@-ms-viewport {
-  width: device-width
-}
+// @-ms-viewport {
+//   width: device-width
+// }
 
 
 * {
@@ -46,24 +46,29 @@
 
   // Use Create line to test the overlap or find any issue 
 
-  // outline: 1px dashed red;
+  outline: 1px dashed red;
 }
 
 
 html,
 body {
-  height: 100vh;
   /* Fallback for browsers that do not support Custom Properties */
   // height: calc(var(--vh, 1vh) * 100);
   // min-height: -webkit-fill-available;
+
   width: 100vw;
+  height: 100vh;
+  // height: calc(100vh - calc(100vh - 100%));
+  // width: 100%;
+  // height: 100%;
+
 }
 
 
 
 mainContainer {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
   display: -ms-grid;
   display: grid;
   grid-template-columns: 1fr;
@@ -128,6 +133,9 @@ header .mainLogo span {
   font-size: .65vw;
   color: var(--text-color-2);
   letter-spacing: .2vw;
+  text-align: end;
+  padding-bottom: .25vw;
+  // margin-bottom: .25vw;
 }
 
 header nav {
@@ -215,7 +223,7 @@ footer {
   // background-color: gray;
 
   a {
-    font-size: .70vw;
+    font-size: .50vw;
     padding: .75vw;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .1vw;
@@ -234,7 +242,12 @@ footer {
 // MOBILE LAYOUT STARTS HERE ---------------------------------------
 
 
-@media all and (max-width: 1030px) and (orientation: portrait) {
+@media all and (max-width: 1030px) and (orientation: portrait) //  and (-webkit-min-device-pixel-ratio: 3),
+
+// only screen and (min--moz-device-pixel-ratio: 3),
+// only screen and (-o-min-device-pixel-ratio: 3/1),
+// only screen and (min-device-pixel-ratio: 3) 
+  {
 
   body {
     display: -ms-grid;
@@ -248,10 +261,19 @@ footer {
     position: fixed;
 
     width: 100vw;
-    height: 100vh;
+    max-height: 100vh;
+
+
     /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    min-height: -webkit-fill-available;
+    // height: calc(var(--vh, 1vh) * 100);
+    // min-height: -webkit-fill-available;
+  }
+
+  mainContainer {
+    min-height: 100vh;
+    // height: calc(100vh - calc(100vh - 100%));
+    // height: calc(100vh - env(safe-area-inset-bottom));
+    // background-color: darkgray;
   }
 
 
@@ -265,7 +287,8 @@ footer {
         position: relative;
         bottom: 1vw;
         font-size: 1.5vw;
-        left: 6vw;
+        margin-bottom: .15vw;
+
       }
     }
 
@@ -350,18 +373,18 @@ footer {
 
 
 
-  // Creating a Stylish Toggle button starts
+  // Creating a Stylish Toggle button starts here
   .toggler {
     position: absolute;
-    top: 2.25vh;
-    left: 84vw;
-    --s: 6vw;
+    top: 2.5vh;
+    left: 80vw;
     /* control the size */
-    --c: #fff;
+    --s: 5vw;
     /* the color */
+    --c: #fff;
 
     height: var(--s);
-    aspect-ratio: 1;
+    aspect-ratio: 2 / 1;
     border: none;
     padding: 0;
     border-inline: calc(var(--s)/1.9) solid #0000;
@@ -416,7 +439,6 @@ footer {
 
   .homePage {
     grid-area: mainContent;
-    background-color: green;
     display: none;
   }
 
@@ -484,6 +506,122 @@ footer {
   //   background:  conic-gradient(from 90deg at 33% 33%, #0000 90deg, #fff 0) 
   //     100% 100%/60% 60%;
   //   transform: translateZ(0px) rotate(45deg);
+
+
+
+
+  // New Hamburger Menu Icon  
+
+
+  // #nav-icon2 {
+  //   width: 60px;
+  //   height: 5px;
+  //   position: relative;
+  //   margin: 50px auto;
+  //   -webkit-transform: rotate(0deg);
+  //   -moz-transform: rotate(0deg);
+  //   -o-transform: rotate(0deg);
+  //   transform: rotate(0deg);
+  //   -webkit-transition: .5s ease-in-out;
+  //   -moz-transition: .5s ease-in-out;
+  //   -o-transition: .5s ease-in-out;
+  //   transition: .5s ease-in-out;
+  //   cursor: pointer;
+  //   z-index: 1;
+
+  // }
+
+
+
+  // #nav-icon2 span {
+  //   display: block;
+  //   position: absolute;
+  //   height: 9px;
+  //   width: 90%;
+  //   background: #d3531a;
+  //   opacity: 1;
+  //   -webkit-transform: rotate(0deg);
+  //   -moz-transform: rotate(0deg);
+  //   -o-transform: rotate(0deg);
+  //   transform: rotate(0deg);
+  //   -webkit-transition: .25s ease-in-out;
+  //   -moz-transition: .25s ease-in-out;
+  //   -o-transition: .25s ease-in-out;
+  //   transition: .25s ease-in-out;
+  //   z-index: 1;
+  // }
+
+  // #nav-icon2 span:nth-child(even) {
+  //   left: 50%;
+  //   border-radius: 0 9px 9px 0;
+  // }
+
+  // #nav-icon2 span:nth-child(odd) {
+  //   left: 0px;
+  //   border-radius: 9px 0 0 9px;
+  // }
+
+  // #nav-icon2 span:nth-child(1),
+  // #nav-icon2 span:nth-child(2) {
+  //   top: 0px;
+  // }
+
+  // #nav-icon2 span:nth-child(3),
+  // #nav-icon2 span:nth-child(4) {
+  //   top: 18px;
+  // }
+
+  // #nav-icon2 span:nth-child(5),
+  // #nav-icon2 span:nth-child(6) {
+  //   top: 36px;
+  // }
+
+  // #nav-icon2.open span:nth-child(1),
+  // #nav-icon2.open span:nth-child(6) {
+  //   -webkit-transform: rotate(45deg);
+  //   -moz-transform: rotate(45deg);
+  //   -o-transform: rotate(45deg);
+  //   transform: rotate(45deg);
+  // }
+
+  // #nav-icon2.open span:nth-child(2),
+  // #nav-icon2.open span:nth-child(5) {
+  //   -webkit-transform: rotate(-45deg);
+  //   -moz-transform: rotate(-45deg);
+  //   -o-transform: rotate(-45deg);
+  //   transform: rotate(-45deg);
+  // }
+
+  // #nav-icon2.open span:nth-child(1) {
+  //   left: 5px;
+  //   top: 7px;
+  // }
+
+  // #nav-icon2.open span:nth-child(2) {
+  //   left: calc(50% - 5px);
+  //   top: 7px;
+  // }
+
+  // #nav-icon2.open span:nth-child(3) {
+  //   left: -50%;
+  //   opacity: 0;
+  // }
+
+  // #nav-icon2.open span:nth-child(4) {
+  //   left: 100%;
+  //   opacity: 0;
+  // }
+
+  // #nav-icon2.open span:nth-child(5) {
+  //   left: 5px;
+  //   top: 29px;
+  // }
+
+  // #nav-icon2.open span:nth-child(6) {
+  //   left: calc(50% - 5px);
+  //   top: 29px;
+  // }
+
 
 
 }
